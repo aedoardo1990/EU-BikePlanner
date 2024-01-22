@@ -1,12 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.views import generic, View
 
 # Create your views here.
-def index(request):
-
-    if request.method == "POST":
-        return HttpResponse("You have POSTed something")
-
-    else:
-        return HttpResponse(request.method)
+class Homepage(generic.TemplateView):
+    """
+    View to display the Homepage
+    """
+    template_name = 'bike_planner/index.html'
