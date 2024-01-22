@@ -11,7 +11,7 @@ class Contact(models.Model):
     name = models.CharField(max_length=50, null=True)
     email = models.EmailField(max_length=200, default="")
     message = models.TextField()
-    sent_on = models.DateTimeField(auto_add_now=True)
+    sent_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ["name"]
