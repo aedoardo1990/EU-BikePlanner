@@ -10,6 +10,7 @@ class Contact(models.Model):
     message_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, null=True)
     email = models.EmailField(max_length=200, default="")
+    subject = models.CharField(max_length=50, null=True)
     message = models.TextField()
     sent_on = models.DateTimeField(auto_now_add=True)
 
@@ -17,4 +18,4 @@ class Contact(models.Model):
         ordering = ["name"]
     
     def __str__(self):
-        return self.name
+        return f"{self.subject} | sent by {self.name}"
