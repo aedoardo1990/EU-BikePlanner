@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from hello_bike import views as index_views
+from bike_planner import views as index_views
 
 urlpatterns = [
     path('', index_views.index, name='index'),
