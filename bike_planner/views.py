@@ -6,4 +6,4 @@ class Homepage(generic.TemplateView):
     """
     View to display the Homepage
     """
-    template_name = 'bike_planner/index.html'
+    template_name = 'index.html'
