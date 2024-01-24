@@ -2,7 +2,7 @@ body {
     background-color: blue;
 }
 
-a:hover {
+.nav-link:hover {
     background-color: blue;
-    color: white;
+    transition: 0.6s linear;
 }
