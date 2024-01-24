@@ -58,11 +58,15 @@
               </div>
             </nav>
         </header>
+        <main>
+          {% block content %}
+          {% endblock content %}
+      </main>
     </div>
 
 
 <!--Footer-->
-<footer class="text-white text-center text-lg-start bg-primary mt-auto">
+<footer class="text-white text-lg-start bg-primary mt-auto">
         <div class="container-fluid text-center">
           <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-facebook-f"></i></a>
           <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-youtube"></i></a>
