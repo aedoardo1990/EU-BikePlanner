@@ -1,0 +1,8 @@
+body {
+    background-color: blue;
+}
+
+.nav-link:hover {
+    background-color: blue;
+    transition: 0.6s linear;
+}
