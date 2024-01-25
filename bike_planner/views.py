@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic, View
-# from .models import Route
+from .models import Route
 
 # Create your views here.
 class Homepage(generic.TemplateView):
@@ -10,9 +10,9 @@ class Homepage(generic.TemplateView):
     template_name = 'index.html'
 
 
-# class RouteList(generic.ListView):
+class RouteList(generic.ListView):
     """
     View is used to display all routes in the routes page
     """
-#     model = Route
-#    template_name = 'routes.html'
+    model = Route
+    template_name = 'routes.html'
