@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
+# Route model for creating posts about EU Routes in Admin
 class Route(models.Model):
     title = models.CharField(max_length=200, unique=True)
     author = models.ForeignKey(
