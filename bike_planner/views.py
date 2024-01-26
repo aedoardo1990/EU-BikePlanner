@@ -14,5 +14,5 @@ class RouteList(generic.ListView):
     """
     View is used to display all routes in the routes page
     """
-    queryset = Route.objects.all()
+    queryset = Route.objects.all().order_by("created_on")
     template_name = 'routes.html'
