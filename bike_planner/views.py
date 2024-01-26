@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Route
 
@@ -16,3 +16,8 @@ class RouteList(generic.ListView):
     """
     queryset = Route.objects.all().order_by("created_on")
     template_name = 'routes.html'
+
+    def route_details(request, slug):
+        queryset = Route.objects.filter(status=1)
+        route = get_object_or_404(queryset, slug=slug)
+        return render(request, "bike_planner/route_details.html", {"route": route},)
