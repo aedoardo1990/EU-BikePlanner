@@ -12,6 +12,7 @@ class Route(models.Model):
         on_delete=models.CASCADE,
         related_name="routes"
     )
+    route_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
