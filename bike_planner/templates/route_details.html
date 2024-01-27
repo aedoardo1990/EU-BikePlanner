@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} EU-BikePlanner | {{ route.title }} {% endblock %}
+{% block content %}
+
+<!--route_details.html content begins here -->
+<div class="container-fluid text-white">
+    <h4 class="card-title">{{ route.title }}</h4>
+    <p class="card-text">{{ route.excerpt }}</p>
+    <br>
+    <div class="col-12 mt-3">
+        <p>{{ route.content }}</p>
+    </div>
+</div>
+
+<!--route_details.html content ends here -->
+{% endblock %}

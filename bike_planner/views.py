@@ -26,7 +26,7 @@ class RouteDetails(View):
     """
     def get(self, request, slug):
         """
-        Retrives the route from the database
+        Retrieves the route from the database
         """
         queryset = Route.objects.all()
         route = get_object_or_404(queryset, slug=slug)
