@@ -2,13 +2,13 @@
 {% block title %}EU-BikePlanner | Routes {% endblock %}
 {% block content %}
 
-<!-- index.html content begins here -->
+<!-- index.html content begins here. Inspired from "I think therefore I blog" of Code Institute -->
 <div class="container-fluid">
     <div class="row">
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left text-white">
-            <div class="row">
+            <div class="row mt-4">
                 {% for route in route_list %}
                 <div class="col-md-6">
                     <div class="card mb-6">
@@ -31,7 +31,7 @@
                 </div>
                 {% if forloop.counter|divisibleby:2 %}
             </div>
-            <div class="row">
+            <div class="row mt-4">
                 {% endif %}
                 {% endfor %}
 
