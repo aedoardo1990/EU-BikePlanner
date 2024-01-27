@@ -14,10 +14,26 @@ class RouteList(generic.ListView):
     """
     View is used to display all routes in the routes page
     """
+    model = Route
     queryset = Route.objects.all().order_by("created_on")
     template_name = 'routes.html'
 
-    def route_details(request, slug):
-        queryset = Route.objects.filter(status=1)
+
+# class inspired from https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main
+class RouteDetails(View):
+    """
+    View used to display the route details.
+    """
+    def get(self, request, slug):
+        """
+        Retrives the route from the database
+        """
+        queryset = Route.objects.all()
         route = get_object_or_404(queryset, slug=slug)
-        return render(request, "bike_planner/route_details.html", {"route": route},)
+
+        return render(
+            request,
+            "route_details.html",
+            {"route": route,},
+        )
+
