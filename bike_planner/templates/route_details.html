@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %} EU-BikePlanner | {{ route.title }} {% endblock %}
 {% block content %}
 
@@ -7,6 +9,13 @@
     <h4 class="card-title">{{ route.title }}</h4>
     <p class="card-text">{{ route.excerpt }}</p>
     <br>
+    <div>
+        {% if "placeholder" in route.route_image.url %}
+        <img src="{% static 'images/mountain-bike.jpeg' %}" alt="placeholder image">
+        {% else %}
+        <img src="{{route.route_image.url}}" alt="route image">
+        {% endif %}
+    </div>
     <div class=" card col-12 mt-3">
         <p>{{ route.content }}</p>
     </div>
