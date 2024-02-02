@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}EU-BikePlanner | Routes {% endblock %}
 {% block content %}
 
@@ -21,11 +23,11 @@
                             <a href="{% url 'route_details' route.slug %}" class="route-link">
                                 <h2 class="card-title">{{ route.title }}</h2>
                                 <div class="d-none d-md-block col-md-6 masthead-image">
-                                    {% if "placeholder" in route.featured_image.url %}
-                                    <img src="https://res.cloudinary.com/duoyolryv/image/upload/v1706871799/Screenshot_2024-02-02_120257_c8voby.png" class="card-img-top"
+                                    {% if "placeholder" in route.route_image.url %}
+                                    <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top"
                                       alt="placeholder image">
                                     {% else %}
-                                    <img src="{{ route.route_image.url }}" class="scale"
+                                    <img src="{{ route.route_image.url }}" class="card-img-top"
                                       alt="{{ route.title }}">
                                     {% endif %}
                                   </div>
