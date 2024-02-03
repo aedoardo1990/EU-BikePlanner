@@ -55,7 +55,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'routes' %}">Routes</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
                             {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-circle-user fa-lg"></i> {{ user.username }}
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
                                     aria-current="page" href="{% url 'account_logout' %}">Logout</a>
@@ -70,9 +78,6 @@
                                     aria-current="page" href="{% url 'account_login' %}">Login</a>
                             </li>
                             {% endif %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
