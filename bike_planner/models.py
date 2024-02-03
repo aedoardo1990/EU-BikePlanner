@@ -27,4 +27,19 @@ class Route(models.Model):
         return f"{self.title}"
 
 
+# Form model to render and handle forms in the admin panel
+class Contact(models.Model):
+    message_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=50, null=True)
+    email = models.EmailField(max_length=254)
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_on']
+    
+    def __str__(self):
+        return f"{self.title} | sent by {self.name}"
+
 
