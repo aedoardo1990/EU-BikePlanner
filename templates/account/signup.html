@@ -3,18 +3,18 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
+{% block head_title %}{% trans "Sign up" %}{% endblock head_title %}
 
 {% block content %}
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Up" %}</h3>
+      <h3>{% trans "Sign up" %}</h3>
 
       <p>{% blocktrans %}
-        Welcome back to the code|star blog.
+        Welcome back to the EU - Bike Planner.
         Do you already have an account? Then please
-        <a class="link" href="{{ login_url }}">sign in</a>
+        <a class="link" href="{{ login_url }}">log in</a>
         instead.
       {% endblocktrans %}</p>
     </div>
@@ -30,7 +30,7 @@
           value="{{ redirect_field_value }}" />
         {% endif %}
         <button class="btn btn-signup right" type="submit">
-          {% trans "Sign Up" %} &raquo;</button>
+          {% trans "Sign up" %} &raquo;</button>
       </form>
     </div>
   </div>
