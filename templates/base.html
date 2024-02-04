@@ -84,10 +84,10 @@
             </nav>
         </header>
         <main>
-            <!--to display form success message - credits to https://stackoverflow.com/questions/64242395/django-flash-messages-showing-only-on-the-django-admin-page-and-not-on-the-templ-->
+            <!--to display flash messages after action taken - credits to https://stackoverflow.com/questions/64242395/django-flash-messages-showing-only-on-the-django-admin-page-and-not-on-the-templ-->
             {% if messages %}
                 {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                        <div id="alert" class="alert alert-{{ message.tags }}">{{ message }}</div>
                 {% endfor %}
             {% endif %}
             {% block content %}
@@ -106,9 +106,13 @@
         </div>
     </footer>
 
-
     <!--Font Awesome Kit-->
     <script src="https://kit.fontawesome.com/4f92087d19.js" crossorigin="anonymous"></script>
+
+    <!--JSQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!--Link to script.js-->
+    <script src="static/js/script.js"></script>
 
 </body>
 
