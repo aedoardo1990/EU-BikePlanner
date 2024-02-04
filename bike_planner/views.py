@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.contrib import messages
 from .models import Route, Contact
 from .forms import ContactForm
 
@@ -39,7 +40,7 @@ class RouteDetails(View):
         )
 
 
-# Contact form
+# Contact form - credits to https://github.com/WojtekKamilowski/CI_PP4_MPN
 def get_user_data(request):
     """
     Retrieves details of user logged in
@@ -74,13 +75,13 @@ class ContactDelivered(View):
         Checks if the details are in valid format
         and then posts to database.
         """
-        form = ContactForm(data=request.POST)
-
-        if form.is_valid():
-            contact = form.save(commit=False)
-            contact.save()
-            # messages.success(request, "Your message has been sent")
-            return render(request, "contact-received.html")
-
-        return render(request, "contact.html", {"form": form})
+        if request.method == "POST":
+            form = ContactForm(data=request.POST)
+            
+            if form.is_valid():
+                form.save()
+                messages.add_message(request, messages.SUCCESS, "Message received! We will reply within 2 working days.")
+                return render(request, "contact-received.html")
+                
+            return render(request, "contact.html", {"form": form})
     
