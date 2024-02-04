@@ -4,12 +4,6 @@
 
 <!-- contact-received.html content begins here -->
 <div>
-    <!--to display form success message - credits to https://stackoverflow.com/questions/64242395/django-flash-messages-showing-only-on-the-django-admin-page-and-not-on-the-templ-->
-    {% if messages %}
-    {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-    {% endfor %}
-    {% endif %}
     <h3>Form successfully sent!</h3>
     <p>We will review your request and get back to you shortly.</p>
     <a href="{% url 'homepage' %}">Home <i class="fa-solid fa-bicycle fa-xl"></i></a>
