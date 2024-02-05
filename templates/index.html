@@ -3,9 +3,23 @@
 {% block content %}
 
 <!-- index.html content begins here -->
-<div>
-    <h3>Your planner to bike long distance in Europe</h3>
-    <p>Plan easy your bike trip through Europe. Pack smartly, travel far! <a class="link" href="{{ signup_url }}">Sign up</a> now or <a class="link" href="{{ login_url }}">log in</a> to start planning your next ride through Europe.</p>
-</div>
+<section>
+    {% if user.is_authenticated %}
+    <div>
+        <h3>Welcome back to your EU Bike Planner! </h3>
+        <div>
+            Plan a new bike trip
+            <a>Create</a>
+        </div>
+    </div>
+    {% else %}
+    <div>
+        <h3>Your planner to bike long distance in Europe</h3>
+        <div>
+            Plan easy your bike trip through Europe. Pack smartly, travel far! <a class="link" href="{{ signup_url }}">Sign up</a> now or <a class="link" href="{{ login_url }}">log in</a> to start planning your next ride through Europe.
+        </div>
+    </div>
+    {% endif %}
+</section>
 <!-- index.html content ends here -->
 {% endblock %}
