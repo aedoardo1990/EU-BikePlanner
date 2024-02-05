@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
-from .models import Route, Contact
+from .models import Route, Contact, Trip, Track
 from .forms import ContactForm
 
 # Create your views here.
@@ -99,6 +99,11 @@ class MyTrips(generic.CreateView):
     """
     View to display the template to add a new bike trip
     """
+    model = Trip
     template_name = 'my-trips.html'
+
+    def get_queryset(self):
+        """Override get_queryset to filter by user"""
+        return Trip.objects.filter(author=self.request.user)
 
     
