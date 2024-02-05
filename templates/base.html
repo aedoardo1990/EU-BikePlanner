@@ -59,15 +59,15 @@
                                 <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
                             </li>
                             {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fa-solid fa-circle-user fa-lg"></i> {{ user.username }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
-                                    aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <i class="fa-solid fa-circle-user fa-lg"></i> {{ user.username }}</a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Plan a trip</a></li>
+                                  <li><a class="dropdown-item" href="#">My trips</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                                </ul>
+                              </li>
                             {% else %}
                             <li class="nav-item">
                                 <a class="nav-link {% if request.path == signup_url %}active{% endif %}"

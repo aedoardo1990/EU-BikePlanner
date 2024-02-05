@@ -84,4 +84,12 @@ class ContactDelivered(View):
                 return render(request, "contact-received.html")
                 
             return render(request, "contact.html", {"form": form})
+
+
+#class AddTrip(View):
+#   """
+#    View to display the template to add a new bike trip
+#     """
+#    template_name = 'add-trip.html'
+
     
