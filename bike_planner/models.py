@@ -43,3 +43,33 @@ class Contact(models.Model):
         return f"{self.title} | sent by {self.name}"
 
 
+# Track model to create list of routes to select from in Trip model 
+class Track(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Trip Model for creating a new trip
+class Trip(models.Model):
+    """
+    Model for trip details
+    """
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="mytrips")
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+    persons_number = models.IntegerField()
+    track = models.ForeignKey(Track, on_delete=models.CASCADE)
+    additional_item = models.CharField(max_length=200, unique=False)
+
+    class Meta:
+        ordering = ['-created_on']
+    
+    def __str__(self):
+        return f"{self.track} | created by {self.name}"
+    
+    
+

@@ -86,10 +86,19 @@ class ContactDelivered(View):
             return render(request, "contact.html", {"form": form})
 
 
-#class AddTrip(View):
-#   """
-#    View to display the template to add a new bike trip
-#     """
-#    template_name = 'add-trip.html'
+# MyTrips View TO BE DEVELOPED
+class AddTrip(generic.CreateView):
+    """
+    View to display the template to add a new bike trip
+    """
+    template_name = 'add-trip.html'
+
+
+# MyTrips View TO BE DEVELOPED
+class MyTrips(generic.CreateView):
+    """
+    View to display the template to add a new bike trip
+    """
+    template_name = 'my-trips.html'
 
     

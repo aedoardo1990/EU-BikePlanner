@@ -6,9 +6,10 @@
 <section>
     {% if user.is_authenticated %}
     <div>
-        <h3>Welcome back to your EU Bike Planner! </h3>
+        <h3>Welcome back to your EU-BikePlanner! </h3>
         <div>
             Plan a new bike trip
+            <a href="{% url 'add-trip' %}">Create</a>
         </div>
     </div>
     {% else %}
