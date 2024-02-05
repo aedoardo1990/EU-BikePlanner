@@ -1,11 +1,16 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}EU-BikePlanner | Add a Trip {% endblock %}
 {% block content %}
 
 <!-- add-trip.html content begins here -->
 <div class="container-fluid">
-    Container to be filled out 
-</div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <input type="submit" value="Submit">
+    </form>
+    </div>
 <!-- add-trip.html content ends here -->
 {% endblock %}

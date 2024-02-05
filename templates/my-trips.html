@@ -5,7 +5,17 @@
 
 <!-- add-trip.html content begins here -->
 <div class="container-fluid">
-    Container to be filled out 
+    <div class="col-12">
+        <h3> My trips </h3>
+    </div>
+    <br>
+    <div class="row card-deck">
+        {% for trip in trip_list %}
+        <div>
+            <p>{{ trip.track }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 <!-- add-trip.html content ends here -->
 {% endblock %}

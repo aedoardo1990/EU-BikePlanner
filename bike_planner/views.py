@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
 from .models import Route, Contact, Trip, Track
-from .forms import ContactForm
+from .forms import ContactForm, TripForm
 
 # Create your views here.
 class Homepage(generic.TemplateView):
@@ -91,15 +91,21 @@ class AddTrip(generic.CreateView):
     """
     View to display the template to add a new bike trip
     """
+    form_class = TripForm
     template_name = 'add-trip.html'
+
+    def get_queryset(self):
+        """Override get_queryset to filter by user"""
+        return Trip.objects.filter(author=self.request.user)
 
 
 # MyTrips View TO BE DEVELOPED
-class MyTrips(generic.CreateView):
+class MyTrips(generic.ListView):
     """
     View to display the template to add a new bike trip
     """
     model = Trip
+    form_class = TripForm
     template_name = 'my-trips.html'
 
     def get_queryset(self):
