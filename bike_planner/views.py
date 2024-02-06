@@ -141,8 +141,9 @@ class TripDetails(View):
         via the trip form
         """
         queryset = Trip.objects.filter(status=1)
-        recipe = get_object_or_404(queryset, slug=slug)
+        trip = get_object_or_404(queryset, slug=slug)
         trip_form = TripForm(data=request.POST)
+        messages.add_message(request, messages.SUCCESS, "New Trip added successfully!")
         
         return render(
             request,
