@@ -1,24 +1,48 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}EU-BikePlanner | My Trips {% endblock %}
 {% block content %}
 
 <!-- add-trip.html content begins here -->
 <div class="container-fluid">
-    <div class="col-12">
-        <h3> My trips </h3>
-    </div>
-    <br>
-    <div class="row card-deck">
-        {% for trip in trip_list %}
-        <div>
-            <p>{{ trip.title }}</p>
-            <div>
-                <a href="{% url 'trip-details' trip.slug %}" class="stretched-link"
-                        aria-label="trip-details"></a>
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <h3> My trips </h3>
+            <div class="row mt-4">
+                {% for trip in trip_list %}
+                <div class="col-md-6">
+                    <div class="card mb-6">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ trip.author }}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'trip-details' trip.slug %}" class="trip-link">
+                                <h2 class="card-title">{{ trip.title }}</h2>
+                                <div class="d-none d-md-block col-md-6 masthead-image">
+                                    {% if "placeholder" in route.route_image.url %}
+                                    <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top"
+                                        alt="placeholder image">
+                                    {% else %}
+                                    <img src="{{ route.route_image.url }}" class="card-img-top" alt="route image">
+                                    {% endif %}
+                                </div>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ trip.created_on}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}
+            </div>
+            <div class="row mt-4">
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 <!-- add-trip.html content ends here -->

@@ -39,8 +39,8 @@ class TripAdmin(SummernoteModelAdmin):
     """
     Enables Admin to manage Trips in the Admin Panel
     """
-    list_display = ('track', 'created_on')
-    search_fields = ['track']
-    list_filter = ('track','created_on')
+    list_display = ('title', 'track', 'created_on')
+    search_fields = ['title', 'track']
+    list_filter = ('title', 'track','created_on')
 
 
