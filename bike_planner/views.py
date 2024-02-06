@@ -128,7 +128,7 @@ class TripDetails(View):
         
         return render(
             request,
-            "trip_details.html",
+            "trip-details.html",
             {
                 "trip": trip,
                 "trip_form": TripForm()
@@ -146,7 +146,7 @@ class TripDetails(View):
         
         return render(
             request,
-            "trip_details.html",
+            "trip-details.html",
             {
                 "trip": trip,
                 "trip_form": TripForm()
