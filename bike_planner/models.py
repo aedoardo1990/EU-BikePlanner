@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
+from autoslug import AutoSlugField
 from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -58,7 +60,7 @@ class Trip(models.Model):
     Model for trip details
     """
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = AutoSlugField(populate_from='title')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="mytrips")
     created_on = models.DateTimeField(auto_now_add=True)
@@ -70,8 +72,12 @@ class Trip(models.Model):
     class Meta:
         ordering = ['-created_on']
     
+    def get_absolute_url(self):
+        """Get url after user adds/edits trip"""
+        return reverse('trip-details', kwargs={'slug': self.slug})
+    
     def __str__(self):
-        return f"{self.track} | created by {self.name}"
+        return f"{self.title}"
     
     
 

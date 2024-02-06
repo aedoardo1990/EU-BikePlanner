@@ -12,5 +12,12 @@
 <br>
 <p><p>{{trip.additional_item}}</p></p>
 </div>
+<div class="container-fluid" class="add-trip">
+    <form method="post">
+        {{ trip_form | crispy }}
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+</div>
 <!-- trip-details.html  content ends here -->
 {% endblock %}

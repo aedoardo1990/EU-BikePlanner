@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
-from django.urls import reverse
 from .models import Route, Contact, Trip, Track
 from .forms import ContactForm, TripForm
 
@@ -98,9 +97,6 @@ class AddTrip(generic.CreateView):
     def get_queryset(self):
         """Override get_queryset to filter by user"""
         return Trip.objects.filter(author=self.request.user)
-    
-    def get_success_url(self):
-        return reverse('mytrips', kwargs={'slug': self.object.slug})
 
 
 # MyTrips View TO BE DEVELOPED
@@ -134,7 +130,7 @@ class TripDetails(View):
             request,
             "trip_details.html",
             {
-                "title": title,
+                "trip": trip,
                 "trip_form": TripForm()
             },
         )
@@ -146,15 +142,13 @@ class TripDetails(View):
         """
         queryset = Trip.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
+        trip_form = TripForm(data=request.POST)
         
         return render(
             request,
             "trip_details.html",
             {
-                "title": title,
+                "trip": trip,
                 "trip_form": TripForm()
             },
         )
-
-
-    

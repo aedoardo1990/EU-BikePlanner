@@ -13,11 +13,13 @@
         {% for trip in trip_list %}
         <div>
             <p>{{ trip.title }}</p>
+            <div>
+                <a href="{% url 'trip-details' trip.slug %}" class="stretched-link"
+                        aria-label="trip-details"></a>
+            </div>
         </div>
         {% endfor %}
     </div>
-    <a href="{% url 'trip-details' trip.slug %}" class="stretched-link"
-                        aria-label="trip-details"></a>
 </div>
 <!-- add-trip.html content ends here -->
 {% endblock %}
