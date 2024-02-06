@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}EU-BikePlanner | {{trip.title}}{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- trip-details.html content begins here -->
+<div class="container-fluid">
+    <p>{{trip.title}}</p>
+<br>
+<p>{{trip.persons_number}}</p>
+<br>
+<p><p>{{trip.additional_item}}</p></p>
+</div>
+<!-- trip-details.html  content ends here -->
+{% endblock %}

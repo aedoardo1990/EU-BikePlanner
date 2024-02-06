@@ -11,4 +11,4 @@ class ContactForm(forms.ModelForm):
 class TripForm(forms.ModelForm):
     class Meta:
         model = Trip
-        fields = ("author", "persons_number", "track", "additional_item")
+        fields = ("title", "author", "persons_number", "track", "additional_item")

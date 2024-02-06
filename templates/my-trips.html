@@ -12,10 +12,12 @@
     <div class="row card-deck">
         {% for trip in trip_list %}
         <div>
-            <p>{{ trip.track }}</p>
+            <p>{{ trip.title }}</p>
         </div>
         {% endfor %}
     </div>
+    <a href="{% url 'trip-details' trip.slug %}" class="stretched-link"
+                        aria-label="trip-details"></a>
 </div>
 <!-- add-trip.html content ends here -->
 {% endblock %}

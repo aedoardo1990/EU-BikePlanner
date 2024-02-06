@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
+from django.urls import reverse
 from .models import Route, Contact, Trip, Track
 from .forms import ContactForm, TripForm
 
@@ -97,6 +98,9 @@ class AddTrip(generic.CreateView):
     def get_queryset(self):
         """Override get_queryset to filter by user"""
         return Trip.objects.filter(author=self.request.user)
+    
+    def get_success_url(self):
+        return reverse('mytrips', kwargs={'slug': self.object.slug})
 
 
 # MyTrips View TO BE DEVELOPED
@@ -111,5 +115,46 @@ class MyTrips(generic.ListView):
     def get_queryset(self):
         """Override get_queryset to filter by user"""
         return Trip.objects.filter(author=self.request.user)
+
+
+class TripDetails(View):
+    """
+    View to display the details of a trip
+    """
+    model = Trip
+    
+    def get(self, request, slug):
+        """
+        Retrives the trip details from the database
+        """
+        queryset = Trip.objects.all()
+        trip = get_object_or_404(queryset, slug=slug)
+        
+        return render(
+            request,
+            "trip_details.html",
+            {
+                "title": title,
+                "trip_form": TripForm()
+            },
+        )
+
+    def post(self, request, slug):
+        """
+        This method is called when a POST request is made to the view
+        via the trip form
+        """
+        queryset = Trip.objects.filter(status=1)
+        recipe = get_object_or_404(queryset, slug=slug)
+        
+        return render(
+            request,
+            "trip_details.html",
+            {
+                "title": title,
+                "trip_form": TripForm()
+            },
+        )
+
 
     

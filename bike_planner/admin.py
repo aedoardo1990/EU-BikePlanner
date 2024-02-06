@@ -30,9 +30,8 @@ class TrackAdmin(SummernoteModelAdmin):
     """
     Enables Admin to change Routes from option lists in the Add Trip Form
     """
-    list_display = ('title', 'slug')
+    list_display = ('title', 'created_on')
     search_fields = ['title']
-    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(Trip)
