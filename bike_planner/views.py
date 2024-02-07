@@ -102,7 +102,7 @@ class AddTrip(SuccessMessageMixin, generic.CreateView):
     def get_success_message(self, cleaned_data):
         """
         This function overrides the get_success_message() method to add
-        the recipe title into the success message.
+        the trip title into the success message.
         credits: https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main
         """
         return self.success_message % dict(

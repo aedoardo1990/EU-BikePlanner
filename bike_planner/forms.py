@@ -10,9 +10,11 @@ class ContactForm(forms.ModelForm):
 
 # form Trip TO BE DEVELOPED
 class TripForm(forms.ModelForm):
-
+    
     class Meta:
         model = Trip
         fields = ("title", "author", "persons_number", "track", "additional_item")
+        
+
 
     
