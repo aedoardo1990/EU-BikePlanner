@@ -2,6 +2,7 @@ from django import forms
 from .models import Contact, Trip
 
 class ContactForm(forms.ModelForm):
+    
     class Meta:
         model = Contact
         fields = ("name", "email", "title", "content")
@@ -9,6 +10,9 @@ class ContactForm(forms.ModelForm):
 
 # form Trip TO BE DEVELOPED
 class TripForm(forms.ModelForm):
+
     class Meta:
         model = Trip
         fields = ("title", "author", "persons_number", "track", "additional_item")
+
+    
