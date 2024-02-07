@@ -87,7 +87,6 @@ class ContactDelivered(View):
             return render(request, "contact.html", {"form": form})
 
 
-# MyTrips View TO BE DEVELOPED
 class AddTrip(SuccessMessageMixin, generic.CreateView):
     """
     View to display the template to add a new bike trip
@@ -104,7 +103,7 @@ class AddTrip(SuccessMessageMixin, generic.CreateView):
         """
         This function overrides the get_success_message() method to add
         the recipe title into the success message.
-        source: https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main
+        credits: https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main
         """
         return self.success_message % dict(
             cleaned_data,
