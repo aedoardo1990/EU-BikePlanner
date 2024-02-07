@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Route, Contact, Trip, Track
 from .forms import ContactForm, TripForm
 
@@ -87,19 +88,30 @@ class ContactDelivered(View):
 
 
 # MyTrips View TO BE DEVELOPED
-class AddTrip(generic.CreateView):
+class AddTrip(SuccessMessageMixin, generic.CreateView):
     """
     View to display the template to add a new bike trip
     """
     form_class = TripForm
     template_name = 'add-trip.html'
+    success_message = "%(calculated_field)s was created successfully"
 
     def get_queryset(self):
         """Override get_queryset to filter by user"""
         return Trip.objects.filter(author=self.request.user)
+    
+    def get_success_message(self, cleaned_data):
+        """
+        This function overrides the get_success_message() method to add
+        the recipe title into the success message.
+        source: https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main
+        """
+        return self.success_message % dict(
+            cleaned_data,
+            calculated_field=self.object.title,
+        )
 
 
-# MyTrips View TO BE DEVELOPED
 class MyTrips(generic.ListView):
     """
     View to display the template to add a new bike trip
@@ -143,7 +155,6 @@ class TripDetails(View):
         queryset = Trip.objects.filter(status=1)
         trip = get_object_or_404(queryset, slug=slug)
         trip_form = TripForm(data=request.POST)
-        messages.add_message(request, messages.SUCCESS, "New Trip added successfully!")
         
         return render(
             request,
