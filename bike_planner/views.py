@@ -96,7 +96,7 @@ class AddTrip(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     template_name = 'add-trip.html'
     fields = ["title", "persons_number", "track", "additional_item"]
     
-    # to auto select user - credits: https://stackoverflow.com/questions/72034201/how-to-populate-user-field-with-current-user-in-django-models-via-forms
+    # to auto select user in form - credits: https://stackoverflow.com/questions/72034201/how-to-populate-user-field-with-current-user-in-django-models-via-forms
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
@@ -144,24 +144,6 @@ class TripDetails(View):
         """
         queryset = Trip.objects.all()
         trip = get_object_or_404(queryset, slug=slug)
-        
-        return render(
-            request,
-            "trip-details.html",
-            {
-                "trip": trip,
-                "trip_form": TripForm()
-            },
-        )
-
-    def post(self, request, slug):
-        """
-        This method is called when a POST request is made to the view
-        via the trip form
-        """
-        queryset = Trip.objects.filter(status=1)
-        trip = get_object_or_404(queryset, slug=slug)
-        trip_form = TripForm(data=request.POST)
         
         return render(
             request,
