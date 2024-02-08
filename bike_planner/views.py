@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Route, Contact, Trip, Track
 from .forms import ContactForm, TripForm
 
@@ -87,17 +88,24 @@ class ContactDelivered(View):
             return render(request, "contact.html", {"form": form})
 
 
-class AddTrip(SuccessMessageMixin, generic.CreateView):
+class AddTrip(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     """
     View to display the template to add a new bike trip
     """
-    form_class = TripForm
+    model = Trip
     template_name = 'add-trip.html'
+    fields = ["title", "persons_number", "track", "additional_item"]
+    
+    # to auto select user - credits: https://stackoverflow.com/questions/72034201/how-to-populate-user-field-with-current-user-in-django-models-via-forms
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
     success_message = "%(calculated_field)s was created successfully"
 
     def get_queryset(self):
         """Override get_queryset to filter by user"""
-        return Trip.objects.filter(author=self.request.user)
+        return Trip.objects.filter(user=self.request.user)
     
     def get_success_message(self, cleaned_data):
         """
@@ -121,7 +129,7 @@ class MyTrips(generic.ListView):
 
     def get_queryset(self):
         """Override get_queryset to filter by user"""
-        return Trip.objects.filter(author=self.request.user)
+        return Trip.objects.filter(user=self.request.user)
 
 
 class TripDetails(View):

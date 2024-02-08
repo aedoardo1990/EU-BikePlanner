@@ -61,7 +61,7 @@ class Trip(models.Model):
     """
     title = models.CharField(max_length=200, unique=True)
     slug = AutoSlugField(populate_from='title')
-    author = models.ForeignKey(
+    user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="mytrips")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -71,6 +71,10 @@ class Trip(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+    
+    def __str__(self):
+        name = str(self.user.username)
+        return name
     
     def get_absolute_url(self):
         """Get url after user adds/edits trip"""
