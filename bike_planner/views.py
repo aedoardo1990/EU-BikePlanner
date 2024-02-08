@@ -157,7 +157,7 @@ class TripDetails(View):
         
     def edit_trip(request, slug):
         """
-        view to edit trip
+        view to edit trip - credits to CI Walkthrough project and https://github.com/WojtekKamilowski/CI_PP4_MPN
         """
         trip = get_object_or_404(Trip, slug=slug)
         if request.method == "POST":
@@ -166,9 +166,7 @@ class TripDetails(View):
                 trip.user = request.user
                 form.save()
                 messages.success(request, "Trip edit completed!")
-                return redirect("mytrips")
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating trip!')
+                return HttpResponseRedirect(reverse('trip-details', args=[slug]))
         form = TripForm(instance=trip)
         context = {"form": form}
         return render(request, "edit-trip.html", context)

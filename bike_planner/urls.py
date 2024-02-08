@@ -9,5 +9,5 @@ urlpatterns = [
     path('add-trip/', views.AddTrip.as_view(), name="add-trip"),
     path('my-trips/', views.MyTrips.as_view(), name="mytrips"),
     path('my-trips/<slug:slug>/', views.TripDetails.as_view(), name='trip-details'),
-    path('edit-trip/<slug:slug>/', views.TripDetails.as_view(), name='edit-trip')
+    path('edit-trip/<slug:slug>/', views.TripDetails.edit_trip, name='edit-trip')
     ]

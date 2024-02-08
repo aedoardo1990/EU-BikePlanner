@@ -13,7 +13,7 @@ class TripForm(forms.ModelForm):
     
     class Meta:
         model = Trip
-        fields = ("title", "user", "persons_number", "track", "additional_item")
+        fields = ("title", "persons_number", "track", "additional_item")
      
 
 
