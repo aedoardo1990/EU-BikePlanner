@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from .models import Route, Contact, Trip, Track
 from .forms import ContactForm, TripForm
 
@@ -153,3 +154,21 @@ class TripDetails(View):
                 "trip_form": TripForm()
             },
         )
+        
+    def edit_trip(request, slug):
+        """
+        view to edit trip
+        """
+        trip = get_object_or_404(Trip, slug=slug)
+        if request.method == "POST":
+            form = TripForm(request.POST, instance=trip)
+            if form.is_valid():
+                trip.user = request.user
+                form.save()
+                messages.success(request, "Trip edit completed!")
+                return redirect("mytrips")
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating trip!')
+        form = TripForm(instance=trip)
+        context = {"form": form}
+        return render(request, "edit-trip.html", context)

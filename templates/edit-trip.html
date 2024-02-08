@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}EU-BikePlanner | {{trip.title}}{% endblock %}
+
+{% block content %}
+
+<!-- edit-trip.html content begins here -->
+<div class="container-fluid">
+    <h2 class="text-center mt-5">Edit your trip:</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <p>
+                <button type="submit" class="cst-bg-green">Confirm <i class="fa-solid fa-check"></i></button>
+            </p>
+        </div>
+    </form>
+</div>
+<!-- edit-trip.html  content ends here -->
+{% endblock %}

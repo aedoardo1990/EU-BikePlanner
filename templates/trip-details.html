@@ -12,6 +12,11 @@
     <p>Persons number: {{trip.persons_number}}</p>
     <br>
     <p>Additional items: {{trip.additional_item}}</p>
+    <div>
+        <span>
+            <a href="{% url 'edit-trip' trip.slug %}" aria-label="Link to edit trip">Edit Trip <i class="fa-solid fa-pen-to-square"></i></a>
+        </span>
+    </div>
     </div>
 <!-- trip-details.html  content ends here -->
 {% endblock %}
