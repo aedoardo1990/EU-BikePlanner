@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}EU-BikePlanner | Delete a trip {% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- delete-trip.html content begins here -->
+<div class="container-fluid">
+    <h2 class="text-center mt-5">Delete {{trip.title}}:</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p class="d-flex justify-content-center m-1 text-center">Are you you sure you want to delete this
+            trip?</p>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="cst-bg-green py-1 my-2">
+                Confirm & Return to Trip List <i class="fa-solid fa-check"></i>
+            </button>
+        </div>
+    </form>
+    <div class="d-flex justify-content-center m-1 text-center">
+        <a href="{% url 'mytrips' %}" class="text-decoration-none">
+            <p class="cst-bg-green px-3 py-1 mt-2 container border border-dark">
+                Return to Trip List <i class="fa-solid fa-rotate-left"></i>
+            </p>
+        </a>
+    </div>
+</div>
+<!-- delete-trip.html content ends here -->
+{% endblock %}

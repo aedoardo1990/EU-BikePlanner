@@ -170,3 +170,15 @@ class TripDetails(View):
         form = TripForm(instance=trip)
         context = {"form": form}
         return render(request, "edit-trip.html", context)
+    
+    def delete_trip(request, slug):
+        """
+        View to delete trip - credits to CI Walkthrough project
+        """
+        trip = get_object_or_404(Trip, slug=slug)
+        if request.method == "POST":
+            trip.delete()
+            messages.add_message(request, messages.SUCCESS, 'Trip deleted!')
+            return HttpResponseRedirect(reverse('mytrips'))
+        
+        return render(request, "delete-trip.html", {"trip": trip})
