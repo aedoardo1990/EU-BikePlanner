@@ -11,13 +11,13 @@
         {% csrf_token %}
         {{ form | crispy }}
         <div>
-            <p>
-                <button type="submit" class="cst-bg-green">
-                    <a class="btn btn-outline-dark m-2">Confirm</a>
-                </button>
-            </p>
+            <button type="submit" class="btn btn-success"> Update
+            </button>
         </div>
     </form>
+    <div class="d-flex justify-content-center m-1 text-center">
+        <a class="btn btn-light btn-outline-secondary" href="{% url 'mytrips' %}" role="button">Cancel</a>
+    </div>
 </div>
 <!-- edit-trip.html  content ends here -->
 {% endblock %}
