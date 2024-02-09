@@ -60,6 +60,7 @@ class Trip(models.Model):
     Model for trip details
     """
     title = models.CharField(max_length=200, unique=True)
+    start_date = models.DateField()
     slug = AutoSlugField(populate_from='title')
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="mytrips")
