@@ -22,8 +22,8 @@ class TripForm(forms.ModelForm):
         model = Trip
         fields = ["title", "start_date", "persons_number", "track", "additional_item"]
         widgets = {
-            "start_date": DateInput(),
-        }
+            'start_date':DateInput(attrs={'class': 'datepicker','data-date-format': 'yyyy/mm/dd',}),
+            }
 
      
 
