@@ -11,10 +11,8 @@ class ContactForm(forms.ModelForm):
         fields = ("name", "email", "title", "content")
 
 
-# date picker
 class DateInput(forms.DateInput):
-    
-    start_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'})) 
+    input_type = "date"
 
 
 # form Trip
@@ -24,8 +22,9 @@ class TripForm(forms.ModelForm):
         model = Trip
         fields = ["title", "start_date", "persons_number", "track", "additional_item"]
         widgets = {
-            'start_date': DateInput(),
+            "start_date": DateInput(),
         }
+
      
 
 

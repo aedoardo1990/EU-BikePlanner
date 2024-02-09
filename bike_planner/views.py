@@ -6,6 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from .models import Route, Contact, Trip, Track
 from .forms import ContactForm, TripForm
+import datetime
+
 
 # Create your views here.
 class Homepage(generic.TemplateView):

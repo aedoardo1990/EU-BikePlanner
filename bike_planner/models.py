@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from autoslug import AutoSlugField
 from cloudinary.models import CloudinaryField
+import datetime
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
