@@ -97,7 +97,7 @@ class AddTrip(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     """
     model = Trip
     template_name = 'add-trip.html'
-    fields = ["title", "start_date", "persons_number", "track", "additional_item"]
+    form_class = TripForm
     
     # to auto select user in form - credits: https://stackoverflow.com/questions/72034201/how-to-populate-user-field-with-current-user-in-django-models-via-forms
     def form_valid(self, form):

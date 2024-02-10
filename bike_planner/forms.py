@@ -1,7 +1,5 @@
 from django import forms
 from .models import Contact, Trip
-from datetime import datetime
-from crispy_forms.helper import FormHelper
 
 
 class ContactForm(forms.ModelForm):
@@ -11,10 +9,6 @@ class ContactForm(forms.ModelForm):
         fields = ("name", "email", "title", "content")
 
 
-class DateInput(forms.DateInput):
-    input_type = "date"
-
-
 # form Trip
 class TripForm(forms.ModelForm):
     
@@ -22,8 +16,8 @@ class TripForm(forms.ModelForm):
         model = Trip
         fields = ["title", "start_date", "persons_number", "track", "additional_item"]
         widgets = {
-            'start_date': forms.DateInput()
-        }
+            'start_date': forms.DateInput(attrs={'type': 'date'}),
+        } # Datepicker created thanks to Stackoverflow
 
      
 
