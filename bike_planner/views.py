@@ -169,7 +169,8 @@ class TripDetails(View):
                 form.save()
                 messages.success(request, "Trip edit completed!")
                 return HttpResponseRedirect(reverse('trip-details', args=[slug]))
-        form = TripForm(instance=trip)
+        else:
+            form = TripForm(instance=trip)
         context = {"form": form}
         return render(request, "edit-trip.html", context)
     
