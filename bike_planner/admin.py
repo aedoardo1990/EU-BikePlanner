@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Route, Contact, Track, Trip
+from .models import Route, Contact, Track, Trip, Bike, Clothes, Repair, Bags, Sleep, Electric, Toilet, Cook
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -28,7 +28,7 @@ class ContactAdmin(SummernoteModelAdmin):
 @admin.register(Track)
 class TrackAdmin(SummernoteModelAdmin):
     """
-    Enables Admin to change Routes from option lists in the Add Trip Form
+    Enables Admin to change route from option lists in the Add Trip Form
     """
     list_display = ('title', 'created_on')
     search_fields = ['title']
@@ -44,3 +44,73 @@ class TripAdmin(SummernoteModelAdmin):
     list_filter = ('title', 'track','created_on')
 
 
+@admin.register(Bike)
+class BikeAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change bike from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']
+
+
+@admin.register(Clothes)
+class ClothesAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change clothing from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']
+
+
+@admin.register(Repair)
+class RepairAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change repair kit from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']
+
+
+@admin.register(Bags)
+class BagsAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change bag from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']
+
+
+@admin.register(Sleep)
+class SleepAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change sleep kit from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']
+
+
+@admin.register(Electric)
+class ElectricAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change electronics from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']
+
+
+@admin.register(Toilet)
+class ToiletAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change toiletries from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']
+
+
+@admin.register(Cook)
+class CookAdmin(SummernoteModelAdmin):
+    """
+    Enables Admin to change cook kit from option lists in the Add Trip Form
+    """
+    list_display = ('title', 'created_on')
+    search_fields = ['title']

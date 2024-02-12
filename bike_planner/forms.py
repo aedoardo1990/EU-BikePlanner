@@ -14,7 +14,7 @@ class TripForm(forms.ModelForm):
     
     class Meta:
         model = Trip
-        fields = ["title", "start_date", "persons_number", "track", "additional_item"]
+        fields = ["title", "start_date", "track", "persons_number", "bike_type", "clothes", "repair_kit", "bags", "sleeping_kit", "electronics", "toiletries", "cooking_kit", "additional_items"]
         widgets = {
             'start_date': forms.DateInput(attrs={'type': 'date'}),
         } # Datepicker created thanks to Stackoverflow

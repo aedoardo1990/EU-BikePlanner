@@ -19,15 +19,31 @@
         <img src="{{ trip.track.route_image.url }}" class="card-img-top" alt="route image">
         {% endif %}
     </div>
-    <p>Track: {{trip.track.length}}</p>
-    <br>
-    <p>Track: {{trip.track.countries_visited }}</p>
-    <br>
-    <p>Track: {{trip.track.UNESCO_sites }}</p>
-    <br>
     <p>Persons number: {{trip.persons_number}}</p>
     <br>
-    <p>Additional items: {{trip.additional_item}}</p>
+    <p>Length: {{trip.track.length}}</p>
+    <br>
+    <p>Countries visited: {{trip.track.countries_visited }}</p>
+    <br>
+    <p>UNESCO sites: {{trip.track.UNESCO_sites }}</p>
+    <br>
+    <p>Bike type: {{trip.bike_type }}</p>
+    <br>
+    <p>Clothes: {{trip.clothes }}</p>
+    <br>
+    <p>Repair kit: {{trip.repair_kit }}</p>
+    <br>
+    <p>Bags: {{trip.bags }}</p>
+    <br>
+    <p>Sleeping kit: {{trip.sleeping_kit}}</p>
+    <br>
+    <p>Electronics: {{trip.electronics }}</p>
+    <br>
+    <p>Toiletries: {{trip.toiletries }}</p>
+    <br>
+    <p>Cooking kit: {{trip.cooking_kit }}</p>
+    <br>
+    <p>Additional items: {{trip.additional_items}}</p>
     <div>
         <span>
             <a href="{% url 'edit-trip' trip.slug %}" aria-label="Link to edit trip">Edit Trip <i class="fa-solid fa-pen-to-square"></i></a>

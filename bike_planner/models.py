@@ -50,10 +50,91 @@ class Contact(models.Model):
 class Track(models.Model):
     title = models.CharField(max_length=200, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     length = models.CharField(max_length=200, unique=False)
     countries_visited = models.CharField(max_length=200, unique=False)
     UNESCO_sites = models.CharField(max_length=200, unique=False)
     route_image = CloudinaryField('image', default='placeholder')
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Bike model to create list of bikes to select from in Trip model 
+class Bike(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Clothes model to create list of clothes to select from in Trip model
+class Clothes(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Repair model to create list of repair tools to select from in Trip model
+class Repair(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Bags model to create list of bags to select from in Trip model
+class Bags(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Sleep model to create list of sleeping tools to select from in Trip model 
+class Sleep(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Electric model to create list of electric tools to select from in Trip model 
+class Electric(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Toilet model to create list of toiletries to select from in Trip model
+class Toilet(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+# Cook model to create list of cooking tools to select from in Trip model 
+class Cook(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.title}"
@@ -71,9 +152,17 @@ class Trip(models.Model):
         User, on_delete=models.CASCADE, related_name="mytrips")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    persons_number = models.IntegerField()
     track = models.ForeignKey(Track, on_delete=models.CASCADE)
-    additional_item = models.CharField(max_length=200, unique=False)
+    persons_number = models.IntegerField()
+    bike_type = models.ForeignKey(Bike, on_delete=models.CASCADE)
+    clothes = models.ForeignKey(Clothes, on_delete=models.CASCADE)
+    repair_kit = models.ForeignKey(Repair, on_delete=models.CASCADE)
+    bags = models.ForeignKey(Bags, on_delete=models.CASCADE)
+    sleeping_kit = models.ForeignKey(Sleep, on_delete=models.CASCADE)
+    electronics = models.ForeignKey(Electric, on_delete=models.CASCADE)
+    toiletries = models.ForeignKey(Toilet, on_delete=models.CASCADE)
+    cooking_kit = models.ForeignKey(Cook, on_delete=models.CASCADE)
+    additional_items = models.CharField(max_length=200, unique=False)
 
     class Meta:
         ordering = ['-created_on']
