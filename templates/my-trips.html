@@ -21,11 +21,11 @@
                             <a href="{% url 'trip-details' trip.slug %}" class="trip-link">
                                 <h2 class="card-title">{{ trip.title }}</h2>
                                 <div class="d-none d-md-block col-md-6 masthead-image">
-                                    {% if "placeholder" in route.route_image.url %}
+                                    {% if "placeholder" in trip.track.route_image.url %}
                                     <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top"
                                         alt="placeholder image">
                                     {% else %}
-                                    <img src="{{ route.route_image.url }}" class="card-img-top" alt="route image">
+                                    <img src="{{ trip.track.route_image.url }}" class="card-img-top" alt="route image">
                                     {% endif %}
                                 </div>
                             </a>

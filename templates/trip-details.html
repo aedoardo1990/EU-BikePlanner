@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block title %}EU-BikePlanner | {{trip.title}}{% endblock %}
+{% load static %}
 
+{% block title %}EU-BikePlanner | {{trip.title}}{% endblock %}
 {% block content %}
 
 <!-- trip-details.html content begins here -->
@@ -10,6 +11,14 @@
     <p>Trip start: {{trip.start_date}}</p>
     <br>
     <p>Track: {{trip.track}}</p>
+    <div class="d-none d-md-block col-md-6 masthead-image">
+        {% if "placeholder" in trip.track.route_image.url %}
+        <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top"
+            alt="placeholder image">
+        {% else %}
+        <img src="{{ trip.track.route_image.url }}" class="card-img-top" alt="route image">
+        {% endif %}
+    </div>
     <br>
     <p>Persons number: {{trip.persons_number}}</p>
     <br>
