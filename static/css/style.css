@@ -1,6 +1,11 @@
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
+/* Global margins */
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
 /* Global fonts */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -50,4 +55,39 @@ header {
     background-color: #003399;
     color: #fff;
     transition: 0.6s linear;
+}
+
+/* Footer - credits to Bootstrap 4 MiniProject of Code Institute  */
+footer {
+    min-height: 120px;
+    background-color: #003399;
+    margin: 0;
+}
+
+.social-networks {
+    padding-bottom: 15px;
+}
+
+.social-networks li a i  {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    background-color: #fff;
+    color: #003399;
+    transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+}
+
+.social-networks li a i:hover  {
+    background-color: #FFCC00;
+}
+
+#footer-details {
+    padding: 20px;
 }
