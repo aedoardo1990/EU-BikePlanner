@@ -15,7 +15,7 @@
     <meta name="keywords" content="EU - BikePlanner, biking, accessories for biking, biking in Europe, Eurovelo">
     <meta name="author" content="Edoardo Angeli">
     <!-- Favicon -->
-    <link rel="icon" href="https://res.cloudinary.com/duoyolryv/image/upload/v1706034962/bike-logo_pdggwz.png">
+    <link rel="icon" href="https://res.cloudinary.com/duoyolryv/image/upload/v1707747397/eu-bike-logo_b3djxd.png">
 
     <!-- Bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,54 +31,62 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <div class="container-fluid">
+    <div class="row container-fluid">
         <!-- Header -->
         <header>
             <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{% url 'homepage' %}">
-                        <img src="https://res.cloudinary.com/duoyolryv/image/upload/v1706034962/bike-logo_pdggwz.png"
-                            alt="Logo" width="60" height="60" class="d-inline-block">
-                        EU-BikePlanner
+                    <a class="col-md-3 logo img-fluid" href="{% url 'homepage' %}">
                     </a>
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <ul class="navbar-nav nav-tabs ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'homepage' %}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'routes' %}">Routes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
-                            </li>
-                            {% if user.is_authenticated %}
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <i class="fa-solid fa-circle-user fa-lg"></i> {{ user.username }}</a>
-                                <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="{% url 'add-trip' %}">Add trip</a></li>
-                                  <li><a class="dropdown-item" href="{% url 'mytrips' %}">My trips</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                                </ul>
-                              </li>
-                            {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
-                                    aria-current="page" href="{% url 'account_signup' %}">Sign Up</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == login_url %}active{% endif %}"
-                                    aria-current="page" href="{% url 'account_login' %}">Login</a>
-                            </li>
-                            {% endif %}
-                        </ul>
+                    <div class="col-md-9">
+                        <div class="row bg-color-name-title">
+                            <div class="col heading">
+                                <h1 class="name">EUROBIKE PLANNER</h1>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                            <ul class="navbar-nav nav-tabs ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'homepage' %}">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'routes' %}">ROUTES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact-us' %}">CONTACT</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                        aria-expanded="false"> <i class="fa-solid fa-circle-user fa-lg"></i>
+                                        {{ user.username }}</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'add-trip' %}">ADD TRIP</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'mytrips' %}">MY TRIPS</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a></li>
+                                    </ul>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                        aria-current="page" href="{% url 'account_signup' %}">Sign Up</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                        aria-current="page" href="{% url 'account_login' %}">Login</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -86,9 +94,9 @@
         <main>
             <!--to display flash messages after action taken - credits to https://stackoverflow.com/questions/64242395/django-flash-messages-showing-only-on-the-django-admin-page-and-not-on-the-templ-->
             {% if messages %}
-                {% for message in messages %}
-                        <div id="alert" class="alert alert-{{ message.tags }}">{{ message }}</div>
-                {% endfor %}
+            {% for message in messages %}
+            <div id="alert" class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
             {% endif %}
             {% block content %}
             {% endblock content %}
@@ -110,7 +118,8 @@
     <script src="https://kit.fontawesome.com/4f92087d19.js" crossorigin="anonymous"></script>
 
     <!--JSQuery CDN-->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!--Link to script.js-->
     <script src="/static/js/script.js"></script>
 
