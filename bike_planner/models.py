@@ -50,6 +50,9 @@ class Contact(models.Model):
 class Track(models.Model):
     title = models.CharField(max_length=200, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    length = models.CharField(max_length=200, unique=False)
+    countries_visited = models.CharField(max_length=200, unique=False)
+    UNESCO_sites = models.CharField(max_length=200, unique=False)
     route_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
