@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- index.html content begins here -->
-<section class="container-fluid">
+<section class="container-fluid bg img-fluid">
     {% if user.is_authenticated %}
     <div class="row row-table">
         <div class="col-md-12 bg-color-intro section-column">
@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <h3 class="uppercase">Plan easy your bike trip through Europe. Pack smartly, travel far!</h3>
                             <br>
-                                <div class="mx-auto">
+                                <div class="col-6 mx-auto">
                                 <a class="btn btn-outline-dark rounded-pill" href="{{ signup_url }}">Sign up</a>
                                 <a class="btn btn-outline-dark rounded-pill" href="{{ login_url }}">Login</a>
                                 </div>
