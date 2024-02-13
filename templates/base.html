@@ -91,13 +91,17 @@
                 </div>
             </nav>
         </header>
-        <main>
-            <!--to display flash messages after action taken - credits to https://stackoverflow.com/questions/64242395/django-flash-messages-showing-only-on-the-django-admin-page-and-not-on-the-templ-->
+        
+         <!--to display flash messages after action taken - credits to https://stackoverflow.com/questions/64242395/django-flash-messages-showing-only-on-the-django-admin-page-and-not-on-the-templ-->
+         <div>
             {% if messages %}
             {% for message in messages %}
             <div id="alert" class="alert alert-{{ message.tags }}">{{ message }}</div>
             {% endfor %}
             {% endif %}
+        </div>
+
+        <main>
             {% block content %}
             {% endblock content %}
         </main>
