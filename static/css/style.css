@@ -17,6 +17,9 @@ h1, h2, h3, h4 {
 
 .row-table {
     display: table;
+    background-color: rgba(44, 65, 56, 0.5); 
+    color: #fff;
+    position: absolute;
 }
 
 .section-column {
@@ -93,6 +96,11 @@ header {
     background-image: url("../images/homepage-photo-1.webp");
     background-size: cover;
     height: 100vh;
+}
+
+.container-fluid {/*to set gutter to 0*/
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
 }
 
 /* Footer - credits to Bootstrap 4 MiniProject of Code Institute  */

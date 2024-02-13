@@ -5,18 +5,26 @@
 <!-- index.html content begins here -->
 <section class="container-fluid bg-image img-fluid">
     {% if user.is_authenticated %}
-    <div class="row row-table">
+    <div class="row row-table table-responsive{-sm|-md|-lg|-xl} m-2">
         <div class="col-md-12 bg-color-intro section-column">
             <div class="row">
                 <div class="col">
-                    <h3 class="section-heading text-uppercase">Welcome back to your EU-BikePlanner! </h3>
-                    <p>Plan a new bike trip <a href="{% url 'add-trip' %}">Create</a></p>
+                    <h3 class="section-heading text-uppercase">Welcome back to your EuroBike Planner! </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 offset-0 offset-sm-0 col-sm-4 col-md-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="uppercase">Plan a new bike trip <a class="btn btn-outline-light rounded-pill" href="{% url 'add-trip' %}">Create</a></h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     {% else %}
-    <div class="row row-table">
+    <div class="row row-table table-responsive{-sm|-md|-lg|-xl} m-2">
         <div class="col-md-12 bg-color-intro section-column">
             <div class="row">
                 <div class="col">
@@ -24,18 +32,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-8">
+                <div class="col-12 offset-0 offset-sm-0 col-sm-4 col-md-8">
                     <div class="row">
                         <div class="col-12">
                             <h3 class="uppercase">Plan easy your bike trip through Europe. Pack smartly, travel far!</h3>
                             <br>
-                                <div class="col-6 mx-auto">
-                                <a class="btn btn-outline-dark rounded-pill" href="{{ signup_url }}">Sign up</a>
-                                <a class="btn btn-outline-dark rounded-pill" href="{{ login_url }}">Login</a>
+                                <div class="mx-auto">
+                                <a class="btn btn-outline-light rounded-pill" href="{{ signup_url }}">Sign up</a>
+                                <a class="btn btn-outline-light rounded-pill" href="{{ login_url }}">Login</a>
                                 </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
     {% endif %}
