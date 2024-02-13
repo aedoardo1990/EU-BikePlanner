@@ -119,22 +119,22 @@ header {
 
 /* Footer - credits to Bootstrap 4 MiniProject of Code Institute  */
 footer {
-    min-height: 120px;
+    max-height: 110px;
     background-color: #003399;
     margin: 0;
 }
 
 .social-networks {
-    padding-bottom: 15px;
+    padding-top: 10px;
 }
 
 .social-networks li a i  {
-    width: 32px;
-    height: 32px;
-    padding: 12px 0;
+    width: 40px;
+    height: 40px;
+    padding: 20px 0;
     border-radius: 50%;
-    font-size: 13px;
-    line-height: 7px;
+    font-size: 22px;
+    line-height: 1px;
     text-align: center;
     background-color: #fff;
     color: #003399;
@@ -146,6 +146,10 @@ footer {
 
 .social-networks li a i:hover  {
     background-color: #FFCC00;
+}
+
+.list-inline-item {
+    padding: 3px;
 }
 
 #footer-details {
@@ -166,6 +170,10 @@ footer {
     }
 }
 
+.list-inline-item {
+    padding: 3px;
+}
+
 /*Media query tablet and larger (768px and up)*/
 @media screen and (min-width: 768px) {
 
@@ -177,6 +185,10 @@ footer {
 
     .navbar-toggler {
         margin-right: 25px;
+    }
+
+    .list-inline-item {
+        padding: 0 20px;
     }
 }
 
@@ -190,6 +202,10 @@ footer {
 
     .nodropdown {
         margin-top: 65px;
+    }
+
+    .list-inline-item {
+        padding: 0 40px;
     }
 }
 
