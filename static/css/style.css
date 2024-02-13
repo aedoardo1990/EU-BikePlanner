@@ -59,12 +59,12 @@ header {
 }
 
 .logo {
-    background: url("../images/eu-bike-logo.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 130px;
-    max-width: 120px;
+    height: 65px;
+    max-width: 240px;
+    margin: 10px;
     transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
@@ -147,3 +147,42 @@ footer {
 #footer-details {
     padding: 20px;
 }
+
+/*Media query tablet and larger (576px and up)*/
+@media screen and (min-width: 576px) {
+
+    .logo {
+        height: 65px;
+        max-width: 240px;
+        margin-left: 135px;
+    }
+}
+
+/*Media query tablet and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+
+    .logo {
+        margin-left: 240px;
+        height: 70px;
+        max-width: 250px;
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .logo {
+        margin-left: 70px;
+        height: 90px;
+        max-width: 320px;
+    }
+}
+
+/* Large devices (laptops and desktops, 1024px and up) */
+@media screen and (min-width: 1024px) {
+
+    .logo {
+        height: 95px;
+        max-width: 340px;
+    }
+}
+

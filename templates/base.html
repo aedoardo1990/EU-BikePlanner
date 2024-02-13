@@ -37,14 +37,9 @@
             <!--Navbar-->
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="col-md-3 logo img-fluid" href="{% url 'homepage' %}">
-                    </a>
-                    <div class="col-md-9">
-                        <div class="row bg-color-name-title">
-                            <div class="col heading">
-                                <h1 class="name fw-normal">EUROBIKE PLANNER</h1>
-                            </div>
-                        </div>
+                                <a class="navbar-brand col-9 col-md-6" href="{% url 'homepage' %}">
+                                    <img class="logo" src="https://res.cloudinary.com/duoyolryv/image/upload/v1707845887/eurobike-logo_bwnbcq.png" alt="header logo">
+                                </a>                            
                         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -87,7 +82,6 @@
                                 {% endif %}
                             </ul>
                         </div>
-                    </div>
                 </div>
             </nav>
         </header>
