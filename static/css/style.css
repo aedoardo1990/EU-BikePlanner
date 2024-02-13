@@ -96,6 +96,16 @@ header {
     background-image: url("../images/homepage-photo-1.webp");
     background-size: cover;
     height: 100vh;
+    position: relative;
+}
+
+#alert{
+    position: absolute;
+    z-index: 99;
+    position: fixed;
+    width: 80%;
+    left: 50%; /*fix position to center - credits https://stackoverflow.com/questions/2861247/center-aligning-a-fixed-position-div*/
+    transform: translate(-50%, 0);
 }
 
 .container-fluid {/*to set gutter to 0*/
