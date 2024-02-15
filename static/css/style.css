@@ -97,7 +97,7 @@ header {
 
 /* Main */
 .bg-image {
-    background-image: url("../images/homepage-photo-1.webp");
+    background-image: url("https://res.cloudinary.com/duoyolryv/image/upload/v1707989105/homepage-photo-1_jtovpd.webp");
     background-size: cover;
     height: 100vh;
     position: relative;
