@@ -3,6 +3,7 @@
 {% block content %}
 
 <!-- index.html content begins here -->
+<!-- Intro box -->
 <section class="container-fluid bg-image img-fluid">
     {% if user.is_authenticated %}
     <div class="row row-table table-responsive{-sm|-md|-lg|-xl} m-2">
@@ -49,5 +50,73 @@
     </div>
     {% endif %}
 </section>
+
+<!-- Short description of app - credits to https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main -->
+<section class="container px-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mt-4 my-3 text-center">How does it work</h2>
+            </div>
+        </div>
+        <hr class="bike-break">
+        <div class="row mb-sm-5">
+            <div class="col-12">
+                <h3 class="mt-3 my-md-3 lead text-justify">EuroBike helps you to discover Europe by bike by packing smartly according to the best cycling routes to travel along Europe in three steps.</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid feature-image-outer text-center">
+        <div class="row">
+            <div class="col-12 col-md-4 mb-2 mt-4">
+                <div class="feature-image mb-2">
+                    <i class="fa-solid fa-signs-post fa-2xl" style="color: #003399;"></i>
+                </div>
+                <div>
+                    <h3 class="feature-title">Route</h3>
+                    <p class="feature-text">
+                        Choose your route
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-2 mt-3">
+                <div class="feature-image mb-2">
+                    <i class="fa-solid fa-suitcase fa-2xl" style="color: #003399;"></i>
+                </div>
+                <h3 class="feature-title">Pack</h3>
+                <p class="feature-text">
+                    Plan what to pack
+                </p>
+            </div>
+            <div class="col-12 col-md-4 mb-2 mt-3">
+                <div class="feature-image mb-2">
+                    <i class="fa-solid fa-person-biking fa-2xl" style="color: #003399;"></i>
+                </div>
+                <h3 class="feature-title">Ride</h3>
+                <p class="feature-text">
+                    Enjoy the ride!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Map section-->
+<section class="container px-0">
+    <div class="container">
+        <hr class="bike-break mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mt-3 my-3 text-center">Map of Routes</h2>
+            </div>
+        </div>
+        <hr class="bike-break">
+        <div class="row mb-sm-5">
+            <div class="col-12">
+                <h3 class="mt-3 my-md-3 lead text-justify"> Cycle across the Old Continent from Scandinavia to Rome, or from Lisbon to Moscow, by choosing one of the 19 bike routes of <a>EuroVelo.</a> EuroVelo is a network of long-distance cycling routes criss-crossing Europe, for a total length of 90,000 km. EuroVelo is a project of the European Cyclists' Federation (ECF).</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- index.html content ends here -->
 {% endblock %}
