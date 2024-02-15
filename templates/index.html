@@ -17,7 +17,8 @@
                 <div class="col-10 offset-0 offset-sm-0 col-sm-4 col-md-8">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="uppercase">Plan a new bike trip <a class="btn btn-outline-light rounded-pill" href="{% url 'add-trip' %}">Create</a></h3>
+                            <h3 class="uppercase">Plan a new bike trip <a class="btn btn-outline-light rounded-pill"
+                                    href="{% url 'add-trip' %}">Create</a></h3>
                         </div>
                     </div>
                 </div>
@@ -36,12 +37,13 @@
                 <div class="col-12 offset-0 offset-sm-0 col-sm-4 col-md-8">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="uppercase">Plan easy your bike trip through Europe. Pack smartly, travel far!</h3>
+                            <h3 class="uppercase">Plan easy your bike trip through Europe. Pack smartly, travel far!
+                            </h3>
                             <br>
-                                <div class="mx-auto">
+                            <div class="mx-auto">
                                 <a class="btn btn-outline-light rounded-pill" href="{{ signup_url }}">Sign up</a>
                                 <a class="btn btn-outline-light rounded-pill" href="{{ login_url }}">Login</a>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -62,7 +64,8 @@
         <hr class="bike-break">
         <div class="row mb-sm-5">
             <div class="col-12">
-                <h3 class="mt-3 my-md-3 lead text-justify">EuroBike helps you to discover Europe by bike by packing smartly according to the best cycling routes to travel along Europe in three steps.</h3>
+                <h3 class="mt-3 my-md-3 lead text-justify">EuroBike helps you to discover Europe by bike by packing
+                    smartly according to the best cycling routes to travel along Europe in three steps.</h3>
             </div>
         </div>
     </div>
@@ -112,7 +115,23 @@
         <hr class="bike-break">
         <div class="row mb-sm-5">
             <div class="col-12">
-                <h3 class="mt-3 my-md-3 lead text-justify"> Cycle across the Old Continent from Scandinavia to Rome, or from Lisbon to Moscow, by choosing one of the 19 bike routes of <a>EuroVelo.</a> EuroVelo is a network of long-distance cycling routes criss-crossing Europe, for a total length of 90,000 km. EuroVelo is a project of the European Cyclists' Federation (ECF).</h3>
+                <h3 class="mt-3 my-md-3 lead text-justify"> Cycle across the Old Continent from Scandinavia to Rome, or
+                    from Lisbon to Moscow, by choosing one of the 19 bike routes of <a href="https://en.eurovelo.com/"
+                        target="_blank" rel="noopener" aria-label="Visit the Official Site of EuroVelo">EuroVelo.</a>
+                    EuroVelo is a network of long-distance cycling routes criss-crossing Europe, for a total length of
+                    90,000 km. EuroVelo is a project of the European Cyclists' Federation (ECF). If you want to know
+                    more about each route click <a href="{% url 'routes' %}">here.</a></h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-5 mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <img src="https://res.cloudinary.com/duoyolryv/image/upload/v1708010163/EuroVelo_Routes_2023.svg_j6dxcs.webp"
+                        class="img-fluid img-thumbnail map" alt="Responsive image"
+                        style="background-color: #003399; max-width: 90%;">
+                </div>
             </div>
         </div>
     </div>
