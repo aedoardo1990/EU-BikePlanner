@@ -6,11 +6,11 @@
 {% block head_title %}{% trans "Sign up" %}{% endblock head_title %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-5 mb-5">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h3>{% trans "Sign up" %}</h3>
-
+      <hr class="bike-break mt-4 mb-4">
       <p>{% blocktrans %}
         Welcome back to the EU - Bike Planner.
         Do you already have an account? Then please
@@ -29,7 +29,7 @@
         <input type="hidden" name="{{ redirect_field_name }}"
           value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-signup right" type="submit">
+        <button class="btn btn-success right rounded-pill" type="submit">
           {% trans "Sign up" %} &raquo;</button>
       </form>
     </div>
