@@ -3,10 +3,23 @@
 {% block content %}
 
 <!-- contact-received.html content begins here -->
-<div>
-    <h3>Form successfully sent!</h3>
-    <p>We will review your request and get back to you shortly.</p>
-    <a href="{% url 'homepage' %}">Home <i class="fa-solid fa-bicycle fa-xl"></i></a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-4 mb-0 text-center">Form successfully sent!</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 mt-2">
+            <hr class="bike-break">
+            <div class="text-center">
+                <p>We will review your request and get back to you shortly.</p>
+                <div class="mb-5">
+                    <a class="btn btn-primary round" href="{% url 'homepage' %}" role="button">Home <i class="fa-solid fa-house"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- contact-received.html content ends here -->
 {% endblock %}
