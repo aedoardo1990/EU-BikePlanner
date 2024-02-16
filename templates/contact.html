@@ -5,12 +5,25 @@
 {% block content %}
 
 <!-- contact.html content begins here -->
-<div>
-<form method="post">
-    {% csrf_token %}
-    {{ form | crispy }}
-    <input type="submit" value="Submit">
-</form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-4 mb-0 text-center">Contact</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 mt-3">
+            <hr class="bike-break">
+            <form method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="mb-5">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <a class="btn btn-primary round" href="{% url 'homepage' %}" role="button">Home <i class="fa-solid fa-house"></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 <!-- contact.html content ends here -->
 {% endblock %}
