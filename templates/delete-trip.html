@@ -6,20 +6,25 @@
 
 <!-- delete-trip.html content begins here -->
 <div class="container-fluid">
-    <h2 class="text-center mt-5">Delete {{trip.title}}:</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <p class="d-flex justify-content-center m-1 text-center">Are you you sure you want to delete this
-            trip?</p>
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Delete
-            </button>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mt-5">Delete {{trip.title}}:</h2>
         </div>
-    </form>
-    
-    <div class="d-flex justify-content-center m-1 text-center">
-        <a class="btn btn-light btn-outline-secondary" href="{% url 'mytrips' %}" role="button">Back to trip list</a>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-11 col-md-8 col-lg-6 mt-3">
+            <hr class="bike-break">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p class="d-flex justify-content-center mt-4">Are you you sure you want to delete this
+                    trip?</p>
+                <div class="mt-4 mb-5">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <a class="btn btn-light btn-outline-primary" href="{% url 'mytrips' %}" role="button">Back to My Trips</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 <!-- delete-trip.html content ends here -->
