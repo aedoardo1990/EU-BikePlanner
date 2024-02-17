@@ -5,24 +5,33 @@
 {% block content %}
 
 <!-- routes.html content begins here. Inspired from "I think therefore I blog" of Code Institute -->
-<div class="row row-cols-1 row-cols-md-2">
-    {% for route in route_list %}
-    <div class="col mb-4 p-4 p-lg-5">
-        <a href="{% url 'route_details' route.slug %}" class="route-link">
-            <div class="card h-100 shadow bg-white rounded">
-                {% if "placeholder" in route.route_image.url %}
-                <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top h-75" alt="placeholder image">
-                {% else %}
-                <img src="{{ route.route_image.url }}" class="card-img-top h-75" alt="route image">
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ route.title }}</h5>
-                    <p class="card-text">{{ route.excerpt }}</p>
-                </div>
-            </div>
-        </a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-4 mb-0 text-center">Routes</h2>
+            <hr class="bike-break mx-4 mx-lg-5 mt-4">
+        </div>
     </div>
-    {% endfor %}
+    <div class="row row-cols-1 row-cols-md-2">
+        {% for route in route_list %}
+        <div class="col mb-4 p-4 p-lg-5">
+            <a href="{% url 'route_details' route.slug %}" class="route-link">
+                <div class="card h-100 shadow bg-white rounded">
+                    {% if "placeholder" in route.route_image.url %}
+                    <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top h-75"
+                        alt="placeholder image">
+                    {% else %}
+                    <img src="{{ route.route_image.url }}" class="card-img-top h-75" alt="route image">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ route.title }}</h5>
+                        <p class="card-text">{{ route.excerpt }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 <!-- routes.html content ends here -->
 {% endblock %}
