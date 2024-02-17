@@ -9,7 +9,7 @@
     {% for route in route_list %}
     <div class="col mb-4 p-4 p-lg-5">
         <a href="{% url 'route_details' route.slug %}" class="route-link">
-            <div class="card h-100">
+            <div class="card h-100 shadow bg-white rounded">
                 {% if "placeholder" in route.route_image.url %}
                 <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top h-75" alt="placeholder image">
                 {% else %}
