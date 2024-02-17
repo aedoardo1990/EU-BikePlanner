@@ -15,7 +15,7 @@
     <div class="row row-cols-1 row-cols-md-2">
         {% for trip in trip_list %}
         <div class="col mb-4 p-4 p-lg-5">
-            <a href="{% url 'trip-details' trip.slug %}" class="route-link">
+            <a href="{% url 'trip-details' trip.slug %}" class="link-offset-2 link-underline link-underline-opacity-0">
                 <div class="card h-100 shadow bg-white rounded">
                     {% if "placeholder" in trip.track.route_image.url %}
                     <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top h-75"
