@@ -6,17 +6,24 @@
 
 <!-- edit-trip.html content begins here -->
 <div class="container-fluid">
-    <h2 class="text-center mt-5">Edit your trip:</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form | crispy }}
-        <div>
-            <button type="submit" class="btn btn-success"> Update
-            </button>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-4 mb-0 text-center">Edit Trip</h2>
         </div>
-    </form>
-    <div class="d-flex justify-content-center m-1 text-center">
-        <a class="btn btn-light btn-outline-secondary" href="{% url 'mytrips' %}" role="button">Cancel</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 mt-3">
+            <hr class="bike-break">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="mb-5">
+                    <button type="submit" class="btn btn-success"> Update
+                    </button>
+                    <a class="btn btn-danger" href="{% url 'mytrips' %}" role="button">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 <!-- edit-trip.html  content ends here -->
