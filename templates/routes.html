@@ -5,51 +5,24 @@
 {% block content %}
 
 <!-- routes.html content begins here. Inspired from "I think therefore I blog" of Code Institute -->
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <h3>Routes</h3>
-            <div class="row mt-4">
-                {% for route in route_list %}
-                <div class="col-md-6">
-                    <div class="card mb-6">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ route.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'route_details' route.slug %}" class="route-link">
-                                <h2 class="card-title">{{ route.title }}</h2>
-                                <div class="d-none d-md-block col-md-6 masthead-image">
-                                    {% if "placeholder" in route.route_image.url %}
-                                    <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top"
-                                      alt="placeholder image">
-                                    {% else %}
-                                    <img src="{{ route.route_image.url }}" class="card-img-top"
-                                      alt="route image">
-                                    {% endif %}
-                                  </div>
-                                <p class="card-text">{{ route.excerpt }}</p>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ route.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:2 %}
-            </div>
-            <div class="row mt-4">
+<div class="row row-cols-1 row-cols-md-2">
+    {% for route in route_list %}
+    <div class="col mb-4 p-4 p-lg-5">
+        <a href="{% url 'route_details' route.slug %}" class="route-link">
+            <div class="card h-100">
+                {% if "placeholder" in route.route_image.url %}
+                <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top h-75" alt="placeholder image">
+                {% else %}
+                <img src="{{ route.route_image.url }}" class="card-img-top h-75" alt="route image">
                 {% endif %}
-                {% endfor %}
-
+                <div class="card-body">
+                    <h5 class="card-title">{{ route.title }}</h5>
+                    <p class="card-text">{{ route.excerpt }}</p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
+    {% endfor %}
 </div>
 <!-- routes.html content ends here -->
 {% endblock %}
