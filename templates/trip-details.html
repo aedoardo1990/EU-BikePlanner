@@ -10,22 +10,22 @@
     <br>
     <p>Trip start: {{trip.start_date}}</p>
     <br>
-    <p>Track: {{trip.track}}</p>
+    <p>Route: {{trip.route}}</p>
     <div class="d-none d-md-block col-md-6 masthead-image">
-        {% if "placeholder" in trip.track.route_image.url %}
+        {% if "placeholder" in trip.route.route_image.url %}
         <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top"
             alt="placeholder image">
         {% else %}
-        <img src="{{ trip.track.route_image.url }}" class="card-img-top" alt="route image">
+        <img src="{{ trip.route.route_image.url }}" class="card-img-top" alt="route image">
         {% endif %}
     </div>
     <p>Persons number: {{trip.persons_number}}</p>
     <br>
-    <p>Length: {{trip.track.length}}</p>
+    <p>Length: {{trip.route.length}}</p>
     <br>
-    <p>Countries visited: {{trip.track.countries_visited }}</p>
+    <p>Countries visited: {{trip.route.countries_visited }}</p>
     <br>
-    <p>UNESCO sites: {{trip.track.UNESCO_sites }}</p>
+    <p>UNESCO sites: {{trip.route.UNESCO_sites }}</p>
     <br>
     <p>Bike type: {{trip.bike_type }}</p>
     <br>

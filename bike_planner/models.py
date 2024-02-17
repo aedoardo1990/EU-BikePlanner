@@ -7,7 +7,7 @@ import datetime
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Route model for creating posts about EU Routes in Admin
+# Route model to create Routes in Admin and to allow user to select from them in Trip Model
 class Route(models.Model):
     title = models.CharField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -15,13 +15,16 @@ class Route(models.Model):
         on_delete=models.CASCADE,
         related_name="routes"
     )
-    route_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
+    length = models.CharField(max_length=200, unique=False)
+    countries_visited = models.CharField(max_length=200, unique=False)
+    UNESCO_sites = models.CharField(max_length=200, unique=False)
+    route_image = CloudinaryField('image', default='placeholder')
 
     class Meta:
         ordering = ['-created_on']
@@ -44,20 +47,6 @@ class Contact(models.Model):
     
     def __str__(self):
         return f"{self.title} | sent by {self.name}"
-
-
-# Track model to create list of routes to select from in Trip model 
-class Track(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    length = models.CharField(max_length=200, unique=False)
-    countries_visited = models.CharField(max_length=200, unique=False)
-    UNESCO_sites = models.CharField(max_length=200, unique=False)
-    route_image = CloudinaryField('image', default='placeholder')
-
-    def __str__(self):
-        return f"{self.title}"
 
 
 # Bike model to create list of bikes to select from in Trip model 
@@ -152,7 +141,7 @@ class Trip(models.Model):
         User, on_delete=models.CASCADE, related_name="mytrips")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    track = models.ForeignKey(Track, on_delete=models.CASCADE)
+    route = models.ForeignKey(Route, on_delete=models.CASCADE)
     persons_number = models.IntegerField()
     bike_type = models.ForeignKey(Bike, on_delete=models.CASCADE)
     clothes = models.ForeignKey(Clothes, on_delete=models.CASCADE)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Route, Contact, Track, Trip, Bike, Clothes, Repair, Bags, Sleep, Electric, Toilet, Cook
+from .models import Route, Contact, Trip, Bike, Clothes, Repair, Bags, Sleep, Electric, Toilet, Cook
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -25,23 +25,14 @@ class ContactAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
 
-@admin.register(Track)
-class TrackAdmin(SummernoteModelAdmin):
-    """
-    Enables Admin to change route from option lists in the Add Trip Form
-    """
-    list_display = ('title', 'created_on')
-    search_fields = ['title']
-
-
 @admin.register(Trip)
 class TripAdmin(SummernoteModelAdmin):
     """
     Enables Admin to manage Trips in the Admin Panel
     """
-    list_display = ('title', 'user', 'track', 'created_on')
-    search_fields = ['title', 'track']
-    list_filter = ('title', 'track','created_on')
+    list_display = ('title', 'user', 'route', 'created_on')
+    search_fields = ['title', 'route']
+    list_filter = ('title', 'route','created_on')
 
 
 @admin.register(Bike)
