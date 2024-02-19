@@ -6,54 +6,63 @@
 
 <!-- trip-details.html content begins here -->
 <div class="container-fluid">
-    <p>Trip title: {{trip.title}}</p>
-    <br>
-    <p>Trip start: {{trip.start_date}}</p>
-    <br>
-    <p>Route: {{trip.route}}</p>
-    <div class="d-none d-md-block col-md-6 masthead-image">
-        {% if "placeholder" in trip.route.route_image.url %}
-        <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top"
-            alt="placeholder image">
-        {% else %}
-        <img src="{{ trip.route.route_image.url }}" class="card-img-top" alt="route image">
-        {% endif %}
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mt-4 mb-0 text-center">Trip title: {{trip.title}}</h4>
+        </div>
     </div>
-    <p>Persons number: {{trip.persons_number}}</p>
-    <br>
-    <p>Length: {{trip.route.length}}</p>
-    <br>
-    <p>Countries visited: {{trip.route.countries_visited }}</p>
-    <br>
-    <p>UNESCO sites: {{trip.route.UNESCO_sites }}</p>
-    <br>
-    <p>Bike type: {{trip.bike_type }}</p>
-    <br>
-    <p>Clothes: {{trip.clothes }}</p>
-    <br>
-    <p>Repair kit: {{trip.repair_kit }}</p>
-    <br>
-    <p>Bags: {{trip.bags }}</p>
-    <br>
-    <p>Sleeping kit: {{trip.sleeping_kit}}</p>
-    <br>
-    <p>Electronics: {{trip.electronics }}</p>
-    <br>
-    <p>Toiletries: {{trip.toiletries }}</p>
-    <br>
-    <p>Cooking kit: {{trip.cooking_kit }}</p>
-    <br>
-    <p>Additional items: {{trip.additional_items}}</p>
-    <div>
-        <span>
-            <a href="{% url 'edit-trip' trip.slug %}" aria-label="Link to edit trip">Edit Trip <i class="fa-solid fa-pen-to-square"></i></a>
-        </span>
+    <hr class="bike-break mx-4 mx-lg-5 mt-4">
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4 p-4 p-lg-5">
+            <div class="card h-100 border-primary">
+                {% if "placeholder" in trip.route.route_image.url %}
+                <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top" alt="placeholder image">
+                {% else %}
+                <img src="{{ trip.route.route_image.url }}" class="card-img-top" alt="route image">
+                {% endif %}
+                <div class="card-body text-center mt-2 mt-md-3 mt-lg-5">
+                    <h4 class="card-title">{{ trip.route }}</h4>
+                    <p>Length: {{ trip.route.length }}</p>
+                    <p>Countries: {{ trip.route.countries_visited }}</p>
+                    <p>UNESCO sites: {{ trip.route.UNESCO_sites }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4 p-4 p-lg-5">
+            <div class="card h-100 border-primary">
+                <div class="card-body">
+                    <p>Trip start: {{trip.start_date}}</p>
+                    <br>
+                    <p>Persons number: {{trip.persons_number}}</p>
+                    <br>
+                    <p>Bike type: {{trip.bike_type }}</p>
+                    <br>
+                    <p>Clothes: {{trip.clothes }}</p>
+                    <br>
+                    <p>Repair kit: {{trip.repair_kit }}</p>
+                    <br>
+                    <p>Bags: {{trip.bags }}</p>
+                    <br>
+                    <p>Sleeping kit: {{trip.sleeping_kit}}</p>
+                    <br>
+                    <p>Electronics: {{trip.electronics }}</p>
+                    <br>
+                    <p>Toiletries: {{trip.toiletries }}</p>
+                    <br>
+                    <p>Cooking kit: {{trip.cooking_kit }}</p>
+                    <br>
+                    <p>Additional items: {{trip.additional_items}}</p>
+                    <br>
+                    <div>
+                        <a class="btn btn-primary" href="{% url 'edit-trip' trip.slug %}" role="button">Edit <i
+                                class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-primary" href="{% url 'delete-trip' trip.slug %}" role="button">Delete <i
+                                class="fa-solid fa-trash-can"></i></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <span>
-            <a href="{% url 'delete-trip' trip.slug %}" aria-label="Link to delete trip">Delete Trip <i class="fa-solid fa-trash-can"></i></i></a>
-        </span>
-    </div>
-    </div>
+</div>
 <!-- trip-details.html  content ends here -->
 {% endblock %}
