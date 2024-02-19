@@ -121,6 +121,17 @@ header {
     border: 1px solid;
 }
 
+/* Route Detail Card */
+.route-detail-card {
+    border: 0.5px solid #D8B646;
+}
+
+.route-detail-img {
+    max-height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
 /* Footer - credits to Bootstrap 4 MiniProject of Code Institute  */
 footer {
     max-height: 110px;
