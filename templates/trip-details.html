@@ -14,7 +14,7 @@
     <hr class="bike-break mx-4 mx-lg-5 mt-4">
     <div class="row row-cols-1 row-cols-md-2">
         <div class="col mb-0 mb-md-4 p-4 p-lg-5">
-            <div class="card h-100 border-primary">
+            <div class="card h-100 shadow bg-white rounded">
                 {% if "placeholder" in trip.route.route_image.url %}
                 <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top" alt="placeholder image">
                 {% else %}
@@ -29,31 +29,31 @@
             </div>
         </div>
         <div class="col mb-4 p-4 p-lg-5">
-            <div class="card h-100 border-primary">
-                <div class="card-body text-center">
-                    <h4>Trip Details</h4>
+            <div class="card h-100 shadow bg-white rounded">
+                <div class="card-body">
+                    <h4 class="text-center">Trip Details</h4>
                     <br>
-                    <p>Trip start: {{trip.start_date}}</p>
+                    <p><i class="fa-regular fa-calendar"></i> Trip start: {{trip.start_date}}</p>
                     <br>
-                    <p>Persons number: {{trip.persons_number}}</p>
+                    <p><i class="fa-solid fa-people-group"></i> Persons number: {{trip.persons_number}}</p>
                     <br>
-                    <p>Bike type: {{trip.bike_type }}</p>
+                    <p><i class="fa-solid fa-bicycle"></i> Bike type: {{trip.bike_type }}</p>
                     <br>
-                    <p>Clothes: {{trip.clothes }}</p>
+                    <p><i class="fa-solid fa-shirt"></i> Clothes: {{trip.clothes }}</p>
                     <br>
-                    <p>Repair kit: {{trip.repair_kit }}</p>
+                    <p><i class="fa-solid fa-screwdriver-wrench"></i> Repair kit: {{trip.repair_kit }}</p>
                     <br>
-                    <p>Bags: {{trip.bags }}</p>
+                    <p><i class="fa-solid fa-suitcase"></i> Bags: {{trip.bags }}</p>
                     <br>
-                    <p>Sleeping kit: {{trip.sleeping_kit}}</p>
+                    <p><i class="fa-solid fa-campground"></i> Sleeping kit: {{trip.sleeping_kit}}</p>
                     <br>
-                    <p>Electronics: {{trip.electronics }}</p>
+                    <p><i class="fa-solid fa-plug"></i> Electronics: {{trip.electronics }}</p>
                     <br>
-                    <p>Toiletries: {{trip.toiletries }}</p>
+                    <p><i class="fa-solid fa-sink"></i> Toiletries: {{trip.toiletries }}</p>
                     <br>
-                    <p>Cooking kit: {{trip.cooking_kit }}</p>
+                    <p><i class="fa-solid fa-utensils"></i> Cooking kit: {{trip.cooking_kit }}</p>
                     <br>
-                    <p>Additional items: {{trip.additional_items}}</p>
+                    <p><i class="fa-solid fa-clipboard-question"></i> Additional items: {{trip.additional_items}}</p>
                     <br>
                     <div>
                         <a class="btn btn-primary" href="{% url 'edit-trip' trip.slug %}" role="button">Edit <i
