@@ -31,6 +31,22 @@
     <div class="m-3 mt-5 mb-5">
         <p>{{ route.content }}</p>
     </div>
+    <div class="container-fluid mb-5 mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    {% if "placeholder" in route.map.url %}
+                    <img src="{% static 'images/mountain-bike.jpeg' %}" alt="placeholder image"
+                        class="img-fluid img-thumbnail map" alt="Responsive image"
+                        style="background-color: #003399; max-width: 90%;">
+                    {% else %}
+                    <img src="{{route.map.url}}" alt="map image" class="img-fluid img-thumbnail map"
+                        alt="Responsive image" style="background-color: #003399; max-width: 90%;"">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

@@ -25,6 +25,7 @@ class Route(models.Model):
     countries_visited = models.CharField(max_length=200, unique=False)
     UNESCO_sites = models.CharField(max_length=200, unique=False)
     route_image = CloudinaryField('image', default='placeholder')
+    map = CloudinaryField('image', default='placeholder')
 
     class Meta:
         ordering = ['-created_on']
