@@ -18,7 +18,7 @@
                 {% if "placeholder" in trip.route.route_image.url %}
                 <img src="{% static 'images/mountain-bike.jpeg' %}" class="card-img-top" alt="placeholder image">
                 {% else %}
-                <img src="{{ trip.route.route_image.url }}" class="card-img-top" alt="route image">
+                <img src="{{ trip.route.map.url }}" class="card-img-top" alt="route map">
                 {% endif %}
                 <div class="card-body text-center mt-2 mt-md-3 mt-lg-5">
                     <h4 class="card-title">{{ trip.route }}</h4>
