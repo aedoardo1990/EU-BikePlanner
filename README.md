@@ -182,12 +182,16 @@ The diagram below is a detailed view of the database schema.
 2- bike_planner app
 - admin.py - imports from .models have been divided on 2 lines (line 2 and 3 of admin.py) to reduce line 2 to less than 80 digits and to pass PEP validator
 ![PEP8 Validation](static/images/readme/admin-py-.png)
+
 - forms.py
 ![PEP8 Validation](static/images/readme/forms-py.png)
+
 - models.py
 ![PEP8 Validation](static/images/readme/models-py.png)
+
 - views.py
 ![PEP8 Validation](static/images/readme/views-py.png)
+
 - urls.py
 ![PEP8 Validation](static/images/readme/bike-planner-urls-py.png)
 
