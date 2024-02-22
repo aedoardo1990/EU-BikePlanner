@@ -26,7 +26,7 @@ class RouteList(generic.ListView):
     template_name = 'routes.html'
 
 
-# class inspired from https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main
+# inspired from https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main
 class RouteDetails(View):
     """
     View used to display the route details.
@@ -41,7 +41,7 @@ class RouteDetails(View):
         return render(
             request,
             "route_details.html",
-            {"route": route,},
+            {"route": route, },
         )
 
 
@@ -52,7 +52,8 @@ def get_user_data(request):
     """
     username = request.user.username
     email = request.user.email
-    user = User.objects.filter(email=user_email, username=user_username).first()
+    user = User.objects.filter(
+        email=user_email, username=user_username).first()
 
     return user
 
@@ -82,12 +83,12 @@ class ContactDelivered(View):
         """
         if request.method == "POST":
             form = ContactForm(data=request.POST)
-            
+
             if form.is_valid():
                 form.save()
-                messages.add_message(request, messages.SUCCESS, "Message received! We will reply within 2 working days.")
+                messages.add_message(request, messages.SUCCESS, "Form sent!")
                 return render(request, "contact-received.html")
-                
+
             return render(request, "contact.html", {"form": form})
 
 
@@ -98,8 +99,8 @@ class AddTrip(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     model = Trip
     template_name = 'add-trip.html'
     form_class = TripForm
-    
-    # to auto select user in form - credits: https://stackoverflow.com/questions/72034201/how-to-populate-user-field-with-current-user-in-django-models-via-forms
+
+    # to auto select user in form - credits: https://stackoverflow.com/
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
@@ -109,7 +110,7 @@ class AddTrip(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     def get_queryset(self):
         """Override get_queryset to filter by user"""
         return Trip.objects.filter(user=self.request.user)
-    
+
     def get_success_message(self, cleaned_data):
         """
         This function overrides the get_success_message() method to add
@@ -140,14 +141,14 @@ class TripDetails(View):
     View to display the details of a trip
     """
     model = Trip
-    
+
     def get(self, request, slug):
         """
         Retrives the trip details from the database
         """
         queryset = Trip.objects.all()
         trip = get_object_or_404(queryset, slug=slug)
-        
+
         return render(
             request,
             "trip-details.html",
@@ -156,10 +157,10 @@ class TripDetails(View):
                 "trip_form": TripForm()
             },
         )
-        
+
     def edit_trip(request, slug):
         """
-        view to edit trip - credits to CI Walkthrough project and https://github.com/WojtekKamilowski/CI_PP4_MPN
+        view to edit trip - credits to CI Walkthrough project
         """
         trip = get_object_or_404(Trip, slug=slug)
         if request.method == "POST":
@@ -168,12 +169,14 @@ class TripDetails(View):
                 trip.user = request.user
                 form.save()
                 messages.success(request, "Trip edit completed!")
-                return HttpResponseRedirect(reverse('trip-details', args=[slug]))
+                return HttpResponseRedirect(
+                    reverse('trip-details', args=[slug])
+                    )
         else:
             form = TripForm(instance=trip)
         context = {"form": form}
         return render(request, "edit-trip.html", context)
-    
+
     def delete_trip(request, slug):
         """
         View to delete trip - credits to CI Walkthrough project
@@ -183,5 +186,5 @@ class TripDetails(View):
             trip.delete()
             messages.add_message(request, messages.SUCCESS, 'Trip deleted!')
             return HttpResponseRedirect(reverse('mytrips'))
-        
+
         return render(request, "delete-trip.html", {"trip": trip})

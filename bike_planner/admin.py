@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Route, Contact, Trip, Bike, Clothes, Repair, Bags, Sleep, Electric, Toilet, Cook
+from .models import Route, Contact, Trip, Bike, Clothes, Repair, Bags, Sleep
+from .models import Electric, Toilet, Cook
 from django_summernote.admin import SummernoteModelAdmin
 
 
