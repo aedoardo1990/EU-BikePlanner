@@ -117,13 +117,13 @@ The wireframes for the "EuroBike" website were created with Figma.
 ![Contact page](static/images/readme/contact-figma.png)
 </details>
 
-### Agile Methodology 
+## Agile Methodology 
 
 Github projects was used to manage the development process using an agile approach. Please click [here] (https://github.com/users/aedoardo1990/projects/3) to view the User Stories in the Kanban board.
 
 A Github Issue was created for each User Story. Each User Story has defined acceptance criteria to make it clear when the User Story has been completed. Not all the User Stories were completed exactly as defined when they were first created. However the differences between the conception of the User Stories and the Final Site are documented in the comments of each User Story. 
 
-### Data Model
+## Data Model
 
 Principles of Object-Oriented Programming were used throughout this project. 
 
@@ -150,12 +150,56 @@ The diagram below is a detailed view of the database schema.
 
 ![Diagram](static/images/readme/EuroBikeDiagram.png)
 
+## Testing 
+
+### HTML Validator
+<details>
+
+<summary>The website was validated by URI into the validator. No errors found.</summary>
+
+![HTML Validation](static/images/readme/html-validator.png)
+
+</details>
+
+### CSS Validator
+<details>
+
+<summary>No errors found for the CSS validator. There are 6 warnings, code from those lines was taken from the Bootstrap Rosie walkthrough of CI</summary>
+
+![CSS Validation](static/images/readme/css-validator.png)
+
+</details>
+
+### PEP 8 Validator
+<details>
+
+<summary>No error found for the PEP8 validator</summary>
+
+1- bike_project:
+- urls.py
+![PEP8 Validation](static/images/readme/urls-py.png)
+
+2- bike_planner app
+- admin.py - imports from .models have been divided on 2 lines (line 2 and 3 of admin.py) to reduce line 2 to less than 80 digits and to pass PEP validator
+![PEP8 Validation](static/images/readme/admin-py-.png)
+- forms.py
+![PEP8 Validation](static/images/readme/forms-py.png)
+- models.py
+![PEP8 Validation](static/images/readme/models-py.png)
+- views.py
+![PEP8 Validation](static/images/readme/views-py.png)
+- urls.py
+![PEP8 Validation](static/images/readme/bike-planner-urls-py.png)
+
+</details>
+
 ## Features
 
 ### Existing Features 
 
 #### Maps
 user when clicking on a Route in the Routes page. When an user will create a new trip, the map of the selected route will appear. 
+
 
 
 
