@@ -56,7 +56,7 @@ The main colors chosen for the website are those of the Europe Union flag. This 
 The background image of the homepage has different shades of blue, aiming at fitting with the blue color of the header and the footer. Blue is a calming color and the image wants to remind bikers of the calming and freeing sensation of biking, with wind in the hair and the feeling that there are no boundaries when you bike. 
 
 
-The Gold metallic color of the European Union flag can be found as well in the footer: social media icons turn to Gold when the user hover over them. 
+The Gold metallic color of the European Union flag can be found as well in the footer: social media icons turn to Gold when the user hovers over them. 
 
 ### Imagery
 
@@ -219,6 +219,7 @@ In the Admin Panel the Superuser can as well address messages sent by site visit
 - [iloveimg](https://www.iloveimg.com/) - to compress and crop images
 - [tiny-img](https://tiny-img.com/webp/) - to convert images to webp format - since there are lots of images in the site, the webp format allows the website to be lighter when loading 
 - [Figma](https://www.figma.com/)
+- [Pexals](https://www.pexels.com/) - source of the video popping out when the contact form has been sent
 
 ### Languages
 
@@ -238,9 +239,70 @@ In the Admin Panel the Superuser can as well address messages sent by site visit
 - [Summernote](https://summernote.org/)
 - [Cloudinary](https://cloudinary.com/)
 
+## Features
 
+### Existing Features 
 
+<details>
 
+<summary>Wesbite name and logo</summary>
+
+They are included on all pages. They are a clickable link to Home page which is a common feature on many websites. The logo was taken from the wikipedia page of EuroVelo - [Wikipedia EuroVelo](https://en.wikipedia.org/wiki/EuroVelo)
+
+![logo-website-name](static/images/readme/logo-websitename.png)
+
+</details>
+
+<details>
+
+<summary>Navbar and Call to Action Intro Message</summary>
+
+- Navbar - Logged out User
+When the user is logged out, the navbar contains the links to Home, Routes, Contact Form, SignUp and Login. Below the header there is a Call to Action message inviting visitors of the site to register or, if they have already an account, to login. 
+
+![navbar-logged-out](static/images/readme/navbar-logged-out.png)
+
+- Navbar - Logged in User
+When the user is logged in, the navbar includes the links to Home, Routes, Contact Form, and Username. When the User clicks on the Username tab, a dropdown will appear with 3 options: Add Trip (to create a new trip), My Trips (this allows the user to view the booked trips), Logout. 
+Below the header the Call to Action message will invite the logged in user to create a new trip. 
+
+![navbar-logged-in](static/images/readme/navbar-logged-in.png)
+
+</details>
+
+<details>
+
+<summary>Register</summary>
+
+It is located on signup.html. It was taken from Allauth and then customised. It enables the user to register an account using own username and password with an optional input of user's email address.
+If the user already created an account, there is a link in the page to redirect to the login page. 
+
+![Register](static/images/readme/sign-up.png)
+
+</details>
+
+<details>
+
+<summary>Login</summary>
+
+It is located on login.html. It was taken from Allauth and then customised. It enables the user to login to the already created account by giving the username and password with an option to remember the username.
+
+![Login](static/images/readme/login-auth.png)
+
+</details>
+
+<details>
+
+<summary>Footer</summary>
+
+It contains icons with links to Youtube, X-Twitter, Pinterest and the Github profile of the author of the site. When 
+
+![Footer](static/images/readme/footer.png)
+
+</details>
+
+#### Maps
+user when clicking on a Route in the Routes page. When an user will create a new trip, the map of the selected route will appear. 
 
 ## Testing 
 
@@ -331,12 +393,7 @@ My mentor, my family and friends checked the site and helped to identify bugs an
 
 
 
-## Features
 
-### Existing Features 
-
-#### Maps
-user when clicking on a Route in the Routes page. When an user will create a new trip, the map of the selected route will appear. 
 
 
 
