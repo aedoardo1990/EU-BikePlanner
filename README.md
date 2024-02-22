@@ -74,6 +74,8 @@ The Font chosen for the site is Montserrat. The font was imported via Google Fon
 
 The wireframes for the "EuroBike" website were created with Figma.
 
+<details>
+
 <summary>Homepage</summary>
 
 ![Homepage](static/images/readme/homepage-figma.png)
