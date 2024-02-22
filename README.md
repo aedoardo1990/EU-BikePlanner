@@ -45,12 +45,39 @@ On top of that, a visitor of EuroBike can find in the app a map of the chosen ro
 
 ## Design
 
+The site has a clean and simple design to provide users with easy access to essential information for their trips. 
+
 ### Color scheme
-Colour palette from Coolors
+
+The main colors chosen for the website are those of the Europe Union flag. This aims at conveying the fact that the project wants to help bikers travelling across Europe.
 
 ![Colour Palette](static/images/readme/palette.png)
 
+The background image of the homepage has different shades of blue, aiming at fitting with the blue color of the header and the footer. Blue is a calming color and the image wants to remind bikers of the calming and freeing sensation of biking, with wind in the hair and the feeling that there are no boundaries when you bike. 
+
+
+The Gold metallic color of the European Union flag can be found as well in the footer: social media icons turn to Gold when the user hover over them. 
+
 ### Imagery
+
+The background image of the homepage display 2 bikers in a beautiful natural landscape. The purpose is to motivate bikers to discover Europe and its immense beauty by slow travelling on their bike. Slow travelling can allow to experience at 360 degrees the new surroundings in which someone cycles.
+
+In the Routes page there is an image for each Route. Different images for each route want to communicate the richness and diversity that exist in Europe, from Stockholm to Rome, from Lisbon to Moscow. 
+
+A map with all the Routes is available in the Homepage. Individual map of each Route can be displayed in the site (for more details about it, check the Features section). 
+
+### Typography
+
+The Font chosen for the site is Montserrat. The font was imported via Google Fonts. The back-up font is sans-serif.
+
+## Features
+
+### Existing Features 
+
+#### Maps
+user when clicking on a Route in the Routes page. When an user will create a new trip, the map of the selected route will appear. 
+
+
 
 
 
