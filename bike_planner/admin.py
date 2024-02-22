@@ -8,9 +8,9 @@ class RouteAdmin(SummernoteModelAdmin):
     """
     Enables Admin to manage routes in the Admin panel
     """
-    list_display = ('title', 'status','created_on')
+    list_display = ('title', 'status', 'created_on')
     search_fields = ['title']
-    list_filter = ('status','created_on')
+    list_filter = ('status', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
@@ -32,7 +32,7 @@ class TripAdmin(SummernoteModelAdmin):
     """
     list_display = ('title', 'user', 'route', 'created_on')
     search_fields = ['title', 'route']
-    list_filter = ('title', 'route','created_on')
+    list_filter = ('title', 'route', 'created_on')
 
 
 @admin.register(Bike)

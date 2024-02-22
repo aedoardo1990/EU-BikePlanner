@@ -7,7 +7,8 @@ import datetime
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Route model to create Routes in Admin and to allow user to select from them in Trip Model
+
+# Route model to create Routes in Admin and to allow user to select route
 class Route(models.Model):
     title = models.CharField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -46,12 +47,12 @@ class Contact(models.Model):
 
     class Meta:
         ordering = ['-created_on']
-    
+
     def __str__(self):
         return f"{self.title} | sent by {self.name}"
 
 
-# Bike model to create list of bikes to select from in Trip model 
+# Bike model to create list of bikes to select from in Trip model
 class Bike(models.Model):
     title = models.CharField(max_length=200, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -91,7 +92,7 @@ class Bags(models.Model):
         return f"{self.title}"
 
 
-# Sleep model to create list of sleeping tools to select from in Trip model 
+# Sleep model to create list of sleeping tools to select from in Trip model
 class Sleep(models.Model):
     title = models.CharField(max_length=200, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -101,7 +102,7 @@ class Sleep(models.Model):
         return f"{self.title}"
 
 
-# Electric model to create list of electric tools to select from in Trip model 
+# Electric model to create list of electric tools to select from in Trip model
 class Electric(models.Model):
     title = models.CharField(max_length=200, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -121,7 +122,7 @@ class Toilet(models.Model):
         return f"{self.title}"
 
 
-# Cook model to create list of cooking tools to select from in Trip model 
+# Cook model to create list of cooking tools to select from in Trip model
 class Cook(models.Model):
     title = models.CharField(max_length=200, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -157,17 +158,14 @@ class Trip(models.Model):
 
     class Meta:
         ordering = ['-created_on']
-    
+
     def __str__(self):
         name = str(self.user.username)
         return name
-    
+
     def get_absolute_url(self):
         """Get url after user adds/edits trip"""
         return reverse('trip-details', kwargs={'slug': self.slug})
-    
+
     def __str__(self):
         return f"{self.title}"
-    
-    
-
