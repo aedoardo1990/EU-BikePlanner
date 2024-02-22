@@ -157,7 +157,27 @@ The diagram below is a detailed view of the database schema.
 
 <summary>The website was validated by URI into the validator. No errors found.</summary>
 
-![HTML Validation](static/images/readme/html-validator.png)
+- index.html
+![HTML Validation](static/images/readme/index.png)
+
+- add-trip.html
+![HTML Validation](static/images/readme/add-trip.png)
+
+- my-trips.html
+![HTML Validation](static/images/readme/my-trips.png)
+
+- trip-details.html
+![HTML Validation](static/images/readme/trips-details.png)
+
+- routes.html
+![HTML Validation](static/images/readme/routes.png)
+
+- route_details.html
+![HTML Validation](static/images/readme/routes-details.png)
+
+- contact.html
+![HTML Validation](static/images/readme/contact.png)
+
 
 </details>
 
@@ -196,6 +216,28 @@ The diagram below is a detailed view of the database schema.
 ![PEP8 Validation](static/images/readme/bike-planner-urls-py.png)
 
 </details>
+
+### Lighthouse Testing 
+
+Here below the score resulting from Lighthouse testing for the Website.
+
+![Lighthouse testing](static/images/readme/lighthouse.jpeg)
+
+### Browser testing
+
+The Website was tested on Google Chrome, Microsoft Edge, Safari, and Firefox with no issues.
+
+### Device testing
+
+The Website was tested on the following devices, OnePlusNord10, iPhone13 mini, MacBook, laptop Acer Swift SF314-43 and created for the following screen sizes: 320px, 576px, 768px, 992px, 1240px and up.
+
+### Mentor, family and friends testing
+
+My mentor, my family and friends checked the site and helped to identify bugs and get a feeling about how the user-experience is perceived by visitors of the site.
+
+
+
+
 
 ## Features
 
