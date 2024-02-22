@@ -76,14 +76,14 @@ The wireframes for the "EuroBike" website were created with Figma.
 
 <summary>Homepage</summary>
 
-![Homepage]()
+![Homepage](static/images/readme/homepage-figma.png)
 </details>
 
 <details>
 
 <summary>Routes</summary>
 
-![Routes]()
+![Routes](static/images/readme/routes-figma.png)
 </details>
 
 
@@ -91,28 +91,28 @@ The wireframes for the "EuroBike" website were created with Figma.
 
 <summary>Add Trip</summary>
 
-![Add Trip]()
+![Add Trip](static/images/readme/addtrip-figma.png)
 </details>
 
 <details>
 
 <summary>My Trips</summary>
 
-![My Trips]()
+![My Trips](static/images/readme/mytrips-figma.png)
 </details>
 
 <details>
 
 <summary>Trip Details</summary>
 
-![Trip Details](docs/wireframes/mybookmarks_wireframe.png)
+![Trip Details](static/images/readme/tripdetails-figma.png)
 </details>
 
 <details>
 
 <summary>Contact</summary>
 
-![Contact page]()
+![Contact page](static/images/readme/contact-figma.png)
 </details>
 
 ## Features
