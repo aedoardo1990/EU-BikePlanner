@@ -66,9 +66,31 @@ In the Routes page there is an image for each Route. Different images for each r
 
 A map with all the Routes is available in the Homepage. Individual map of each Route can be displayed in the site (for more details about it, check the Features section). 
 
-### Typography
+### Fonts
 
 The Font chosen for the site is Montserrat. The font was imported via Google Fonts. The back-up font is sans-serif.
+
+### Structure
+
+The project consists of one Django application - named bike_planner. The website has the following pages and each page the corresponding functions:
+
+- index.html -> home page containing essential info about the website
+- add-trip.html -> to create a trip by choosing route and selecting which items to pack 
+- trip-details.html -> when the trip is booked, the user is redirected to this page, where all the booked info are visible + a map of the selected route
+- my-trips.html -> each logged in user can check here his/her booked trips
+- edit-trip.html -> to edit the details of a booked trip
+- delete-trip.html -> to delete a booked trip from my-trips.html
+- routes.html -> to view a list of all the routes. This page is accessible both from logged in and logged out users. 
+- route_details.html -> to check the details of each route (photo, description and map). This page can be viewed both from logged in and logged out users. 
+- contact.html -> to allow the user to send messages about the site to Admin. This page can be displayed both from logged in and logged out users. 
+- contact-received.html -> when the contact form is sent, this page is displayed
+
+There are also a few customised pages related to user's authentication option with Alluath:
+
+- login.html
+- logout.html
+- signup.html
+
 
 ### Wireframes
 
@@ -119,7 +141,7 @@ The wireframes for the "EuroBike" website were created with Figma.
 
 ## Agile Methodology 
 
-Github projects was used to manage the development process using an agile approach. Please click [here] (https://github.com/users/aedoardo1990/projects/3) to view the User Stories in the Kanban board.
+Github projects was used to manage the development process using an agile approach. Please click <a href=" https://github.com/users/aedoardo1990/projects/3" alt="link to Kanban Board"> here</a> to view the User Stories in the Kanban board.
 
 A Github Issue was created for each User Story. Each User Story has defined acceptance criteria to make it clear when the User Story has been completed. Not all the User Stories were completed exactly as defined when they were first created. However the differences between the conception of the User Stories and the Final Site are documented in the comments of each User Story. 
 
@@ -149,6 +171,44 @@ On the top of the mentioned models, there is as well a Contact model, which enab
 The diagram below is a detailed view of the database schema.
 
 ![Diagram](static/images/readme/EuroBikeDiagram.png)
+
+## Messages and interaction with users 
+
+<details>
+    <summary>Messages updating the user when an action has been completed.</summary>
+
+- Login successful
+![Login](static/images/readme/login.png)
+
+- Trip created
+![Trip created](static/images/readme/trip-created.png)
+
+- Date can not be in the past
+![Date not in the past](static/images/readme/date-past.png)
+
+- Trip edited
+![Trip edited](static/images/readme/trip-edited.png)
+
+- Trip deleted
+![Trip deleted](static/images/readme/trip-deleted.png)
+
+- Contact form sent
+![Contact form sent](static/images/readme/form-sent.png)
+
+- Logout successful 
+![Logout successful ](static/images/readme/logout.png)
+
+</details>
+
+## Admin Panel - Superuser 
+
+In the Admin Panel the Admin/ Superuser has full access to CRUD functionality to create, edit or delete users' trips and the available packing options in the website regarding the following items: bags, bike types, clothes, cooking kit, electronics, toiletries, repair kit, routes, sleeping kit. 
+In the Admin Panel the Superuser can as well address messages sent by site visitors via the contact form.
+
+![Admin Panel](static/images/readme/superuser.png)
+
+
+
 
 ## Testing 
 
