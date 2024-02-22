@@ -70,6 +70,51 @@ A map with all the Routes is available in the Homepage. Individual map of each R
 
 The Font chosen for the site is Montserrat. The font was imported via Google Fonts. The back-up font is sans-serif.
 
+### Wireframes
+
+The wireframes for the "EuroBike" website were created with Figma.
+
+<summary>Homepage</summary>
+
+![Homepage]()
+</details>
+
+<details>
+
+<summary>Routes</summary>
+
+![Routes]()
+</details>
+
+
+<details>
+
+<summary>Add Trip</summary>
+
+![Add Trip]()
+</details>
+
+<details>
+
+<summary>My Trips</summary>
+
+![My Trips]()
+</details>
+
+<details>
+
+<summary>Trip Details</summary>
+
+![Trip Details](docs/wireframes/mybookmarks_wireframe.png)
+</details>
+
+<details>
+
+<summary>Contact</summary>
+
+![Contact page]()
+</details>
+
 ## Features
 
 ### Existing Features 
