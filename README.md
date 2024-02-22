@@ -123,6 +123,33 @@ Github projects was used to manage the development process using an agile approa
 
 A Github Issue was created for each User Story. Each User Story has defined acceptance criteria to make it clear when the User Story has been completed. Not all the User Stories were completed exactly as defined when they were first created. However the differences between the conception of the User Stories and the Final Site are documented in the comments of each User Story. 
 
+### Data Model
+
+Principles of Object-Oriented Programming were used throughout this project. 
+
+Django AllAuth was used for the user authentication system.
+
+The main Model of the app is the Trip model. It allows users to add trips. The trip author is a foreign key to the User model given a trip can only have one author.
+
+The following 9 models are linked by a Foreign Key to the Trip Model and they enable the below actions to a site visitor:
+- Route -> choose a route from a preselected list 
+- Bike -> choose a bike type from a preselected list
+- Clothes  -> select clothing equipment from a preselected list
+- Repair -> choose a repair kit from a preselected list
+- Bags -> select a bag type from a preselected list
+- Sleep -> select a sleeping kit from a preselected list
+- Electric -> choose a set of electronics from a preselected list
+- Toilet -> choose a set of toiletries from a preselected list
+- Cook  -> select a cooking kit from a preselected list
+
+The Route model allows as well to display all the routes under the Routes tab and to view the photo, the description and the map of each route. 
+
+On the top of the mentioned models, there is as well a Contact model, which enables the User to send messages to the Admin, and the Admin to view and manages the messages of site visitors. This model can be accessed by a logged out User too. On the contrary, when the User is logged in, the Name and Email fields will be autopopulated with the User's data.
+
+The diagram below is a detailed view of the database schema.
+
+![Diagram](static/images/readme/EuroBikeDiagram.png)
+
 ## Features
 
 ### Existing Features 
