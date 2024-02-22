@@ -117,6 +117,12 @@ The wireframes for the "EuroBike" website were created with Figma.
 ![Contact page](static/images/readme/contact-figma.png)
 </details>
 
+### Agile Methodology 
+
+Github projects was used to manage the development process using an agile approach. Please click [here] (https://github.com/users/aedoardo1990/projects/3) to view the User Stories in the Kanban board.
+
+A Github Issue was created for each User Story. Each User Story has defined acceptance criteria to make it clear when the User Story has been completed. Not all the User Stories were completed exactly as defined when they were first created. However the differences between the conception of the User Stories and the Final Site are documented in the comments of each User Story. 
+
 ## Features
 
 ### Existing Features 
