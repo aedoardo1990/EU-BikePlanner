@@ -207,6 +207,38 @@ In the Admin Panel the Superuser can as well address messages sent by site visit
 
 ![Admin Panel](static/images/readme/superuser.png)
 
+## Technologies used 
+
+- [Heroku](https://www.heroku.com/)
+- [GitHub](https://github.com/)
+- [Gitpod](https://gitpod.io/) 
+- [Google Fonts](https://fonts.google.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [draw.io](https://app.diagrams.net/) - to create the Database diagram
+- [Colors](https://coolors.co/) - to create the color palette of the readme
+- [iloveimg](https://www.iloveimg.com/) - to compress and crop images
+- [tiny-img](https://tiny-img.com/webp/) - to convert images to webp format - since there are lots of images in the site, the webp format allows the website to be lighter when loading 
+- [Figma](https://www.figma.com/)
+
+### Languages
+
+- HTML
+- CSS
+- JavaScript
+- Python
+
+### Libraries & Frameworks
+
+- [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+### Django Packages
+
+- [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+- [Summernote](https://summernote.org/)
+- [Cloudinary](https://cloudinary.com/)
+
+
 
 
 
