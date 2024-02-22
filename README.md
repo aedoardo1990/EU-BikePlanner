@@ -43,6 +43,15 @@ On top of that, a visitor of EuroBike can find in the app a map of the chosen ro
 - review messages sent by users so that I can address their requests
 - delete read & actioned users messages so that I do not action the same message twice
 
+## Design
+
+### Color scheme
+Colour palette from Coolors
+
+![Colour Palette](static/images/readme/palette.png)
+
+### Imagery
+
 
 
 
