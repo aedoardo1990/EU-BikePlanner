@@ -24,7 +24,7 @@ On top of that, a visitor of EuroBike can find in the app a map of the chosen ro
 #### As a user I want to:
 
 - log in or log out of my account so that my account is safe
-- register an account so that I can add, edit or delete my bike tour plans
+- register an account so that I can create a new bike trip
 - login so that I can access my booked bike tour plans
 - view a list of all the bike routes
 - view the description and map of each route so that I can choose which route suits me
@@ -452,7 +452,7 @@ This feature would allow to select a quantity and the weight for each item selec
 
 
 
-## Testing 
+## Validation 
 
 ### HTML Validator
 <details>
@@ -519,7 +519,44 @@ This feature would allow to select a quantity and the weight for each item selec
 
 </details>
 
-### Lighthouse Testing 
+## Testing
+
+### Manual Testing
+
+<details>
+
+<summary>Manual Testing</summary>
+
+---------------------------------------------------------------
+
+| Expectation (As a user, I want to...)  | Result (As a user, I...)    |
+| :---------------------------------: | :------------------------------:|
+| log in or log out of my account so that my account is safe. | can log in/log out successfully and check my booked trips only when logged-in. |
+| register an account so that I can create a new bike trip. | can register an account successfully and can create a new bike trip immediately in the Homepage when logged-in. |
+| login so that I can access my booked bike tour plans. | can view and access my booked trips by clicking Username > My Trips |
+| view a list of all the bike routes. | see a list of all the bike routes after clicking the Routes Tab. |
+| view the description and map of each route so that I can choose which route suits me. | can check a description and a map of each route after clicking on any route in the Routes page. |
+| select bike routes from a list so that I can plan which route to do. | can choose any route from a dropdown list when filling the form to add/create a new trip. |
+| select among different options for different categories of items to organise what to pack for the trip. | can choose different packing options for the following categories in the form to add/create a new trip: Bike type, Clothes, Repair kit, Bags, Sleeping kit, Electronics, Toiletries, Cooking kit. |
+| add additional items if anything is missing in the preselected packing options. | can add freely any item in the field "Additional items" of the Add Trip Form. |
+| view the list of items for the trip so that I can ensure if things need to be added or deleted. | get a summary page with all the information I selected for the trip after submitting the Add Trip Form. |
+| update a list item so that I can adjust accordingly my iventory for the trip. | can decide to edit any item of a trip by following the path MyTrips > Trip Name > Edit Button .|
+| delete a trip from the my booked trips, if I am not going to do it anymore. | can delete a trip from my booked trips by following the path MyTrips > Trip Name > Delete Button .|
+| contact Site's Admin so that I can send my questions/ feedback regarding the use of the application. | can send messages to Site's Admin by filling in the Contact Form that I can find by clicking on the Contact Tab in the navbar.  |
+
+| Expectation (As a Site Admin, I want to...)  | Result (As a Site Admin, I...)    |
+| :---------------------------------: | :------------------------------:|
+| allow only registered users to use the website so that they can only access their own bike trip plans. | can allow only registered users to access the website to plan bike trips and each user can access only her/his trips. |
+| access the admin panel so that I can check and manage the items of the bike tour plans of each user. | can access the planned trips of the users in the admin panel (under the category Trips) and edit their items or delete their trips if needed. |
+| manage the list of bike routes and items so that I can keep up-to-date routes and lists of items. | can add, edit or delete the bike routes in the Admin Panel under the category Routes. I can add, edit or delete lists of items under the categories Bagss, Bikes, Clothes, Cooks, Electrics, Repairs, Sleeps, Toilets. |
+| review messages sent by users so that I can address their requests. | can check messages of site visitors by clicking on the category Contacts in the Admin Panel and reply to their requests. |
+| delete read & actioned users messages so that I do not action the same message twice. | can delete actioned users requests under the category Contacts in the Admin Panel. |
+
+</details>
+
+
+
+### Lighthouse 
 
 Here below the score resulting from Lighthouse testing for the Website.
 
@@ -536,6 +573,7 @@ The Website was tested on the following devices, OnePlusNord10, iPhone13 mini, M
 ### Mentor, family and friends testing
 
 My mentor, my family and friends checked the site and helped to identify bugs and get a feeling about how the user-experience is perceived by visitors of the site.
+
 
 
 
