@@ -258,11 +258,13 @@ They are included on all pages. They are a clickable link to Home page which is 
 <summary>Navbar and Call to Action Intro Message</summary>
 
 - Navbar - Logged out User
+
 When the user is logged out, the navbar contains the links to Home, Routes, Contact Form, SignUp and Login. Below the header there is a Call to Action message inviting visitors of the site to register or, if they have already an account, to login. 
 
 ![navbar-logged-out](static/images/readme/navbar-logged-out.png)
 
 - Navbar - Logged in User
+
 When the user is logged in, the navbar includes the links to Home, Routes, Contact Form, and Username. When the User clicks on the Username tab, a dropdown will appear with 3 options: Add Trip (to create a new trip), My Trips (this allows the user to view the booked trips), Logout. 
 Below the header the Call to Action message will invite the logged in user to create a new trip. 
 
@@ -293,6 +295,18 @@ It is located on login.html. It was taken from Allauth and then customised. It e
 
 <details>
 
+<summary>Introduction to the Website</summary>
+
+Below the background image of the homepage, there is a brief introduction to how the website help bikers to travel across Europe. A section called "Routes Map" follows to introduce the user to the biking routes and to the project of EuroVelo. 
+
+![Introduction](static/images/readme/site-description.png)
+
+![Routes Map](static/images/readme/routes-map.png)
+
+</details>
+
+<details>
+
 <summary>Footer</summary>
 
 It contains icons with links to Youtube, X-Twitter, Pinterest and the Github profile of the author of the site. When 
@@ -300,6 +314,106 @@ It contains icons with links to Youtube, X-Twitter, Pinterest and the Github pro
 ![Footer](static/images/readme/footer.png)
 
 </details>
+
+<details>
+
+<summary>Add Trip</summary>
+
+It is located on add-trip.html. It contains the form allowing the user to create a new trip with all the requested details. Most of the fields offer the user with a choice from a dropdown list. In the fields of Title and Additional Items, the user can type in anything, in the field of Persons number only numbers can be entered, and in the Date Field only a date.
+
+![Add trip feature](static/images/readme/add-trip-feature.png)
+
+</details>
+
+<details>
+
+<summary>View Trip Details and Route Map </summary>
+
+When a trip is booked, the user is redirected to this newly created page with all the data entered by the user for the trip + the map of the selected route.  
+
+![Trip details-1](static/images/readme/trip-details-feature-1.png)
+
+The user can choose to edit one or more of the fields by pressing the Edit button at the bottom, or to go to the Delete page to cancel the trip by pressing the Delete button. 
+
+![Trip details-2](static/images/readme/trip-details-feature-2.png)
+
+</details>
+
+<details>
+
+<summary>My Trips Page</summary>
+
+It is located on my-trips.html. This feature allows the user to view all her/his booked trips. 
+
+![My booked trips](static/images/readme/my-trips-feature.png)
+
+</details>
+
+
+<details>
+
+<summary>Edit Trip</summary>
+
+It is located on edit-trip.html. It enables the user to modify any of the details of a booked trip. 
+
+![Edit Trip](static/images/readme/edit-trip-feature.png)
+
+</details>
+
+<details>
+
+<summary>Delete Trip</summary>
+
+It is located on delete-trip.html. It enables the user to delete a booked trip. Alternatively, the user can press the other button "Back to my trips".
+
+![Delete Trip](static/images/readme/delete-feature.png)
+
+</details>
+
+<details>
+
+<summary>Routes Page</summary>
+
+It is located on routes.html. This page allows logged in and logged out users to check a list of all the available bike routes. The introducing card of each route includes an image of the route, the title and an excerpt of the route description. 
+
+![Routes Page](static/images/readme/routes-feature.png)
+
+</details>
+
+<details>
+
+<summary>View Routes Details</summary>
+
+When a User clicks on one of the routes in routes.html, she/he is redirected to a more detailed page of the route. This page will include name, photo, description and map of the route.
+
+![Routes Details 1](static/images/readme/routes-details-1.png)
+
+![Routes Details 2](static/images/readme/routes-details-2.png)
+
+</details>
+
+<details>
+
+<summary>Contact form</summary>
+
+Logged in and logged out users can contact the Admin of the Site by sending a form via this page. It is located on contact.html.
+
+![Contact form](static/images/readme/contact-feature.png)
+
+When the form has been sent successfully, a confirmation message a video of a biking person in a forest will be displayed.
+
+![Form sent](static/images/readme/form-sent-feature.png)
+
+</details>
+
+
+
+
+
+
+
+
+
 
 #### Maps
 user when clicking on a Route in the Routes page. When an user will create a new trip, the map of the selected route will appear. 
