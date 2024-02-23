@@ -406,7 +406,7 @@ Logged in and logged out users can contact the Admin of the Site by sending a fo
 
 ![Contact form](static/images/readme/contact-feature.png)
 
-When the form has been sent successfully, a confirmation message a video of a biking person in a forest will be displayed.
+When the form has been sent successfully, a confirmation message with a video of a biking person in a forest will be displayed.
 
 ![Form sent](static/images/readme/form-sent-feature.png)
 
