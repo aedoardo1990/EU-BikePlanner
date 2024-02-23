@@ -11,7 +11,40 @@ The live link of our site can be found here - [EuroBike](https://eu-bike-planner
 
 ## Table of Contents
 - [EuroBike](#eurobike)
-  * [User Experience (UX)](#user-experience-ux)
+- [Table of Contents](#table-of-contents)
+- [User Experience (UX)](#user-experience-ux)
+- [User Stories](#user-stories)
+- [Design](#design)
+  - [Color scheme](#color-scheme)
+  - [Imagery](#imagery)
+  - [Fonts](#fonts)
+  - [Structure](#structure)
+  - [Wireframes](#wireframes)
+- [Agile Methodology](#agile-methodology)
+- [Data Model](#data-model)
+- [Messages and Interaction With Users](#messages-and-interaction-with-users)
+- [Admin Panel-Superuser](#admin-panel-superuser)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
+- [Validation](#validation)
+  - [HTML validator](#html-validator)
+  - [CSS validator](#css-validator)
+  - [PEP8 validator](#pep-8-validator)
+
+  - [Accessibility](#accessibility)
+  - [Performance](#performance)
+  - [Device Testing](#device-testing)
+  - [Browser compatibility](#browser-compatibility)
+  - [Testing](#testing)
+    - [Automated Testing](#automated-testing)
+    - [Manual Testing](#manual-testing)
+  - [Bugs](#bugs)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Media](#media)
+  - [Further Developments](#further-developments)
+  - [Acknowledgements](#acknowledgements)
 
 
 ## User Experience (UX)
@@ -484,6 +517,22 @@ This feature would allow to select a quantity and the weight for each item selec
 
 - urls.py
 ![PEP8 Validation](static/images/readme/bike-planner-urls-py.png)
+
+</details>
+
+### JShint Validator
+<details>
+
+<summary>No errors found for the JShint validator.</summary>
+
+There were 2 undefined variables as per the screenshot below. 
+
+![JShint Validation](static/images/readme/jshint-before.png)
+
+The issue was solved by adding the comment on line 12. 
+
+![JShint Validation](static/images/readme/jshint-after.png)
+
 
 </details>
 
