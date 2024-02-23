@@ -675,25 +675,4 @@ Sean of Code Institute, he helped me a great deal in solving the CSS JS bug.
 
 Kay of Code Institure, for being a passionate and motivating tutor. 
 
-My biking friends of Prague, for all the biking trips we enjoyed together. 
-
-
-### Media
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+My biking friends of Prague, for all the biking trips we enjoyed together.
