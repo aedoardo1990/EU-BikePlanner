@@ -23,7 +23,7 @@ The live link of our site can be found here - [EuroBike](https://eu-bike-planner
 - [Agile Methodology](#agile-methodology)
 - [Data Model](#data-model)
 - [Messages and Interaction With Users](#messages-and-interaction-with-users)
-- [Admin Panel-Superuser](#admin-panel-superuser)
+- [Admin Panel-Superuser](#admin-panel---superuser)
 - [Features](#features)
   - [Existing Features](#existing-features)
   - [Future Features](#future-features)
