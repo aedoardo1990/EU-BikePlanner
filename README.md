@@ -525,7 +525,7 @@ This feature would allow to select a quantity and the weight for each item selec
 
 <details>
 
-<summary>Manual Testing</summary>
+<summary>Testing User Stories</summary>
 
 ---------------------------------------------------------------
 
@@ -543,6 +543,7 @@ This feature would allow to select a quantity and the weight for each item selec
 | update a list item so that I can adjust accordingly my iventory for the trip. | can decide to edit any item of a trip by following the path MyTrips > Trip Name > Edit Button .|
 | delete a trip from the my booked trips, if I am not going to do it anymore. | can delete a trip from my booked trips by following the path MyTrips > Trip Name > Delete Button .|
 | contact Site's Admin so that I can send my questions/ feedback regarding the use of the application. | can send messages to Site's Admin by filling in the Contact Form that I can find by clicking on the Contact Tab in the navbar.  |
+
 
 | Expectation (As a Site Admin, I want to...)  | Result (As a Site Admin, I...)    |
 | :---------------------------------: | :------------------------------:|
@@ -573,6 +574,20 @@ The Website was tested on the following devices, OnePlusNord10, iPhone13 mini, M
 ### Mentor, family and friends testing
 
 My mentor, my family and friends checked the site and helped to identify bugs and get a feeling about how the user-experience is perceived by visitors of the site.
+
+## Bugs
+
+### Fixed Bugs 
+
+| Bug  | Fix  |
+| ------- | ------- |
+| There was a bug with the database. This bug did not allow me to add routes in the Admin Panel. | I realized that for EuroBike I was using the same database I used to do the CI walkthrough. Therefore I created a new database with Elephant SQL which I used just for EuroBike. |
+| CSS and JS were not loading when deploying to Heroku with Debug set to False | I added a few cloudinary parameters in settings.py and disabled cache. |
+
+
+### Unfixed Bugs
+
+When trying to add a new trip via mobile on Firefox, I got a Server Error(500). The trip was then added successufully under My Trips when I reloaded the My Trips page but when I clicked on it, the trip details view was not working and throwing again the Server Error(500). I tried to access the mentioned trip via other browser than Firefox but I got the same Error. I managed to delete this Trip with Server Error from the Admin Panel.  
 
 
 
