@@ -406,17 +406,51 @@ When the form has been sent successfully, a confirmation message a video of a bi
 
 </details>
 
+### Future Features 
+
+<details>
+
+<summary>Integration of Google Maps</summary>
+
+In the future we would like to replace current maps with interactive Google Maps, that the biker could use to navigate on the route with her/his mobile device and GPS. This functionality will look similar to that of EuroVelo - for an example click <a href="https://en.eurovelo.com/ev1">here</a>. It will have a more interactive and a cleaner style than the version of EuroVelo.
+
+</details>
+
+<details>
+
+<summary>Meeting other bikers </summary>
+
+We would like to include an option to meet bikers travelling on the same route or in the surroundings. This would allow Users to create a EuroBike community aiming at biking together and sharing the experience provided by EuroBike. This feature could be implemented with a Chat function to be included in the app. 
+
+</details>
+
+<details>
+
+<summary>Integration of booking.com/AirBnB</summary>
+
+For bikers who don't plan to sleep in a tent overnight, we would like to include an option on the website to redirect them to offers of hotels/accomodations on the road. This feature would look similar to the one of the site <a href="https://www.omio.com/">Omio</a> - details in the screenshot below. They could be redirected to the website of booking.com, AirBnb or CouchSurfing. 
+
+![Omio site](static/images/readme/omio.png)
+
+</details>
+
+<details>
+
+<summary>Select End Date, select Departure and Arrival Locations</summary>
+
+So far in the Add Trip page it is possible to select the Start Date of the Trip. In the future, we would like to add as well the option for the User to select the expected End Date (this might vary, when biking long distance, unexpected things might happen that prolong the trip) and the exact Departure and Arrival Locations(some bikers might want just to do a part of the road and not the whole route).
+
+</details>
+
+<details>
+
+<summary>Select Quantity and Weight for each Item</summary>
+
+This feature would allow to select a quantity and the weight for each item selected by the user. We could then include a weight calculator, so that the user could ponder if some things need to be removed or others might be added. 
+
+</details>
 
 
-
-
-
-
-
-
-
-#### Maps
-user when clicking on a Route in the Routes page. When an user will create a new trip, the map of the selected route will appear. 
 
 ## Testing 
 
