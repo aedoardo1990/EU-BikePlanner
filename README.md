@@ -207,38 +207,6 @@ In the Admin Panel the Superuser can as well address messages sent by site visit
 
 ![Admin Panel](static/images/readme/superuser.png)
 
-## Technologies used 
-
-- [Heroku](https://www.heroku.com/)
-- [GitHub](https://github.com/)
-- [Gitpod](https://gitpod.io/) 
-- [Google Fonts](https://fonts.google.com/)
-- [Font Awesome](https://fontawesome.com/)
-- [draw.io](https://app.diagrams.net/) - to create the Database diagram
-- [Colors](https://coolors.co/) - to create the color palette of the readme
-- [iloveimg](https://www.iloveimg.com/) - to compress and crop images
-- [tiny-img](https://tiny-img.com/webp/) - to convert images to webp format - since there are lots of images in the site, the webp format allows the website to be lighter when loading 
-- [Figma](https://www.figma.com/)
-- [Pexals](https://www.pexels.com/) - source of the video popping out when the contact form has been sent
-
-### Languages
-
-- HTML
-- CSS
-- JavaScript
-- Python
-
-### Libraries & Frameworks
-
-- [Django](https://www.djangoproject.com/)
-- [Bootstrap](https://getbootstrap.com/)
-
-### Django Packages
-
-- [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
-- [Summernote](https://summernote.org/)
-- [Cloudinary](https://cloudinary.com/)
-
 ## Features
 
 ### Existing Features 
@@ -589,7 +557,128 @@ My mentor, my family and friends checked the site and helped to identify bugs an
 
 When trying to add a new trip via mobile on Firefox, I got a Server Error(500). The trip was then added successufully under My Trips when I reloaded the My Trips page but when I clicked on it, the trip details view was not working and throwing again the Server Error(500). I tried to access the mentioned trip via other browser than Firefox but I got the same Error. I managed to delete this Trip with Server Error from the Admin Panel.  
 
+## Deployment to Heroku
 
+To deploy this page to Heroku from its GitHub repository, the following steps were taken:
+
+### Create the Heroku App:
+- Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
+- On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
+- Enter a unique and meaningful app name.
+- Next select your region.
+- Click on the Create App button.
+
+### Attach the Postgres database:
+- In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
+- Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+
+### Prepare the environment and settings.py file:
+- In your GitPod workspace, create an env.py file in the main directory.
+- Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file. 
+- Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
+- Comment out the default database configuration.
+- Save files and make migrations.
+- Add Cloudinary URL to env.py
+- Add the cloudinary libraries to the list of installed apps.
+- Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+- Link the file to the templates directory in Heroku.
+- Change the templates directory to TEMPLATES_DIR
+- Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
+
+### Create files / directories
+- Create requirements.txt file
+- Create the directory templates in the main directory.
+- Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
+
+### Update Heroku Config Vars
+Add the following Config Vars in Heroku:
+- SECRET_KEY value 
+- CLOUDINARY_URL
+- PORT = 8000
+- DISABLE_COLLECTSTATIC = 1
+
+### Deploy
+- NB: Ensure in Django settings, DEBUG is False
+- Go to the deploy tab on Heroku and connect to GitHub, then to the required repository. 
+- Scroll to the bottom of the deploy page and click Enable Automatic Deploys for automatic deploys.
+- Click View to view the deployed site.
+
+The site is now live and operational.
+
+## Technologies used 
+
+### Languages
+
+- HTML
+- CSS
+- JavaScript
+- Python
+
+### Frameworks - Libraries - Programs Used
+- [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Heroku](https://www.heroku.com/)
+- [GitHub](https://github.com/)
+- [Gitpod](https://gitpod.io/) 
+- [PostgreSQL](https://www.postgresql.org/) - to create database for this project
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - to manage Django Forms
+- [W3C](https://www.w3.org/) - for HTML & CSS Validation.
+- [PEP8 Online](http://pep8online.com/) - to validate the Python code
+- [Jshint](https://jshint.com/) - to validate javascript code
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - for overall development of the website
+- [Google Fonts](https://fonts.google.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [draw.io](https://app.diagrams.net/) - to create the Database diagram
+- [Colors](https://coolors.co/) - to create the color palette of the readme
+- [Techsini](https://techsini.com/multi-mockup/index.php) - mockup generator for the readme image at the top showing how the site looks on different screens
+- [iloveimg](https://www.iloveimg.com/) - to compress and crop images
+- [tiny-img](https://tiny-img.com/webp/) - to convert images to webp format - since there are lots of images in the site, the webp format allows the website to be lighter when loading 
+- [Figma](https://www.figma.com/)
+- [Pexals](https://www.pexels.com/) - source of the video popping out when the contact form has been sent
+
+### Django Packages
+
+- [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - authentication library used to allow user to create accounts
+- [Summernote](https://summernote.org/) - to manage the Admin Panel
+- [Cloudinary](https://cloudinary.com/)
+
+### Python libraries 
+- [datetime](https://docs.python.org/3/library/datetime.html) - Python library to import time to not allow users to set date in the past when selecting start date of a trip
+- [autoslug](https://pypi.org/project/django-autoslug/) - to create slugs
+
+## Credits
+
+### Code used
+- [Walkthrough Project of Code Institute](https://github.com/Code-Institute-Solutions/blog) - this project was very helpful to understand how Django works and to create the Routes and My Trips pages
+- [MyMealPlanner](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main) - this project was studied in-depth as example for building a Django full stack application 
+- [My Pantry Note](https://github.com/WojtekKamilowski/CI_PP4_MPN/tree/main) - this project was another big source of inspiration for EuroBike
+- [Rosie Bootstrap Walkthrough Project of Code Institute](https://github.com/Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume/tree/master) - this project helped me to better understand how Bootstrap works
+- [Stack Overflow](https://stackoverflow.com/)
+- [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+
+### Media 
+- [EuroVelo](https://en.eurovelo.com/) - a big thanks goes to EuroVelo for providing the routes and the description and information about each route
+- [Wikipedia](https://www.wikipedia.org/) - for the image of the logo of EuroVelo and the maps of all the EuroVelo routes
+- [OnlyLuxe](https://onlyluxe.com.au/) - for the background image of the Homepage
+- [Pinterest](https://www.pinterest.it/) - for the image used for each route
+- [Cyclingabout](https://www.cyclingabout.com/understanding-the-types-of-touring-bikes-available/) - for the list of bike types in the add trip form
+- [Canyon](https://www.canyon.com/en-it/blog-content/gravel-bike-news/bikepacking-kit-list/b02122021-1.html) - for the list of bags in the add trip form
+- [Bickepacking](https://bikepacking.com/bikepacking-101/pack-list) - for the bikepacking tips about the other categories included int he add trip form
+
+## Acknowledgements
+
+My mentor Antonio for offering always invaluable insights and advices to improve the quality of my projects. 
+
+My wife, for the passion she shares for my work and for being the number 1 tester of my sites. 
+
+Sean of Code Institute, he helped me a great deal in solving the CSS JS bug. 
+
+Kay of Code Institure, for being a passionate and motivating tutor. 
+
+My biking friends of Prague, for all the biking trips we enjoyed together. 
+
+
+### Media
 
 
 
