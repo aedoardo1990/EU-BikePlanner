@@ -315,7 +315,7 @@ Below the background image of the homepage, there is a brief introduction to how
 
 <summary>Footer</summary>
 
-It contains icons with links to Youtube, X-Twitter, Pinterest and the Github profile of the author of the site. When 
+It contains icons with links to Youtube, X-Twitter, Pinterest and the Github profile of the author of the site. 
 
 ![Footer](static/images/readme/footer.png)
 
